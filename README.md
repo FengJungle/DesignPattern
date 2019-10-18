@@ -15,4 +15,8 @@
 
 04.设计模式（四）——简单工厂模式
 
-博客地址：https://mp.csdn.net/postedit/102598181
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102598181
+
+05.设计模式（五）——工厂方法模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102616501
