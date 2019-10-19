@@ -20,3 +20,7 @@
 05.设计模式（五）——工厂方法模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102616501
+
+06.设计模式（六）——抽象工厂模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102618384
