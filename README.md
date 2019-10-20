@@ -32,3 +32,7 @@
 08.设计模式（八）——原型模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102642682
+
+09.设计模式（九）——单例模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102649056
