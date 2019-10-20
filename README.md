@@ -28,3 +28,7 @@
 07.设计模式（七）——建造者模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102635881
+
+08.设计模式（八）——原型模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102642682
