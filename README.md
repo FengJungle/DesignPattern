@@ -36,3 +36,7 @@
 09.设计模式（九）——单例模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102649056
+
+10.设计模式（十）——适配器模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102656617
