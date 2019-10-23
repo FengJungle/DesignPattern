@@ -40,3 +40,7 @@
 10.设计模式（十）——适配器模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102656617
+
+11.设计模式（十一）——桥接模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102694306
