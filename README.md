@@ -48,3 +48,7 @@
 12.设计模式（十二）——组合模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102712738
+
+13.设计模式（十三）——装饰模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102733023
