@@ -44,3 +44,7 @@
 11.设计模式（十一）——桥接模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102694306
+
+12.设计模式（十二）——组合模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102712738
