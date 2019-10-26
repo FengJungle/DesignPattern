@@ -52,3 +52,7 @@
 13.设计模式（十三）——装饰模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102733023
+
+14.设计模式（十四）——外观模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102752643
