@@ -56,3 +56,7 @@
 14.设计模式（十四）——外观模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102752643
+
+15.设计模式（十五）——享元模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102763849
