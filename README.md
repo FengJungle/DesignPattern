@@ -1,5 +1,7 @@
 # DesignPattern
-前言：Jungle设计模式系列
+Jungle设计模式系列
+
+代码资源：https://github.com/FengJungle/DesignPattern
 
 01.设计模式——设计模式概述
 
@@ -60,3 +62,11 @@
 15.设计模式（十五）——享元模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102763849
+
+15.设计模式（十六）——代理模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102772697
+
+16.设计模式（十七）——职责链模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102790445
