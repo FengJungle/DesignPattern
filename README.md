@@ -63,10 +63,14 @@ Jungle设计模式系列
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102763849
 
-15.设计模式（十六）——代理模式
+16.设计模式（十六）——代理模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102772697
 
-16.设计模式（十七）——职责链模式
+17.设计模式（十七）——职责链模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102790445
+
+18.设计模式（十八）——命令模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102810123
