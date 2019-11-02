@@ -74,3 +74,7 @@ Jungle设计模式系列
 18.设计模式（十八）——命令模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102810123
+
+19.设计模式（十九）——解释器模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102864850
