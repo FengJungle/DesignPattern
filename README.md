@@ -82,3 +82,7 @@ Jungle设计模式系列
 20.设计模式（二十）——迭代器模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102879383
+
+21.设计模式（二十一）——中介者模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102885567
