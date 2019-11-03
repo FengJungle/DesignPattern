@@ -1,5 +1,5 @@
-#ifndef __COMMAND_PATTERN_H__
-#define __COMMAND_PATTERN_H__
+#ifndef __INTERPRETOR_PATTERN_H__
+#define __INTERPRETOR_PATTERN_H__
 
 #include <vector>
 using namespace std;
@@ -126,4 +126,4 @@ private:
 };
 
 
-#endif //__COMMAND_PATTERN_H__
+#endif //__INTERPRETOR_PATTERN_H__

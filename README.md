@@ -78,3 +78,7 @@ Jungle设计模式系列
 19.设计模式（十九）——解释器模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102864850
+
+20.设计模式（二十）——迭代器模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102879383
