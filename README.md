@@ -86,3 +86,7 @@ Jungle设计模式系列
 21.设计模式（二十一）——中介者模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102885567
+
+22.设计模式（二十二）——备忘录模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102907007
