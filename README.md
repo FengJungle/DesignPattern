@@ -90,3 +90,7 @@ Jungle设计模式系列
 22.设计模式（二十二）——备忘录模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102907007
+
+23.设计模式（二十三）——观察者模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102927937
