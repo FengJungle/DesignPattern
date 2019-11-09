@@ -98,3 +98,7 @@ Jungle设计模式系列
 24.设计模式（二十四）——状态模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102966121
+
+25.设计模式（二十五）——策略模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102984862
