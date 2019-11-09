@@ -94,3 +94,7 @@ Jungle设计模式系列
 23.设计模式（二十三）——观察者模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102927937
+
+24.设计模式（二十四）——状态模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102966121
