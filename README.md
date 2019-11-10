@@ -102,3 +102,7 @@ Jungle设计模式系列
 25.设计模式（二十五）——策略模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102984862
+
+26.设计模式（二十六）——模板方法模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/102994585
