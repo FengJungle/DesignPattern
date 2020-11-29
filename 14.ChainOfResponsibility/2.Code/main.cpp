@@ -28,6 +28,16 @@ int main()
 	zuzhang->handleRequest(bill4);
 
 	printf("\n\n");
+
+	delete zuzhang;
+	delete bingge;
+	delete chunzong;
+	delete laoban;
+	delete bill1;
+	delete bill2;
+	delete bill3;
+	delete bill4;
+
 	system("pause");
 	return 0;
 }

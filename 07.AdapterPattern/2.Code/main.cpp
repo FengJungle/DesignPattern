@@ -7,5 +7,6 @@ int main()
 	controller->pathPlanning();
 
 	system("pause");
+	delete controller;
 	return 0;
 }

@@ -14,9 +14,13 @@ int main()
 	printf("++++++++++++++++++++++++++++++++++\n");
 
 	//Jungle想在这个手机上玩游戏B
+	delete game;
 	game = new GameB();
 	phone->setupGame(game);
 	phone->play();
+
+	delete phone;
+	delete game;
 
 	system("pause");
 	return 0;

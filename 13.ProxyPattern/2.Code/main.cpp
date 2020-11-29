@@ -9,6 +9,8 @@ int main()
 
 	printf("\n\n");
 
+	delete subject;
+
 	system("pause");
 	return 0;
 }

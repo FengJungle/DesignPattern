@@ -7,7 +7,7 @@ int main()
 	facade->powerOn();
 
 	printf("\n\n");
-
+	delete facade;
 	system("pause");
 	return 0;
 }

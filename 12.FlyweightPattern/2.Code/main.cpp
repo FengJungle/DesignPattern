@@ -30,6 +30,12 @@ int main()
 
 	printf("\n\n");
 
+	delete factory;
+	delete device1;
+	delete device2;
+	delete device3;
+	delete device4;
+	
 	system("pause");
 	return 0;
 }

@@ -21,7 +21,6 @@ int main()
 	office5 = new AdminOffice("行政办公室");
 	office6 = new DeanOffice("教务办公室");
 	
-
 	office7 = new AdminOffice("行政办公室");
 	office8 = new DeanOffice("教务办公室");
 	
@@ -40,9 +39,22 @@ int main()
 	head->add(office2);
 	head->add(sichuanBranch);
 	
-
 	head->operation();
 
 	system("pause");
+
+	delete head;
+	delete sichuanBranch;
+	delete cdBranch;
+	delete myBranch;
+	delete office1;
+	delete office2;
+	delete office3;
+	delete office4;
+	delete office5;
+	delete office6;
+	delete office7;
+	delete office8;
+
 	return 0;
 }
