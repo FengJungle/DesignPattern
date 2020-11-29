@@ -33,6 +33,9 @@ int main()
 	handler->setInput(input_13); handler->handle();
 
 	printf("\n\n");
+	delete handler;
+	
 	system("pause");
+
 	return 0;
 }

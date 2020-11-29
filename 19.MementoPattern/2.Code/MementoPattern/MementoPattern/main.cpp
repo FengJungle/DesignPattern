@@ -40,5 +40,9 @@ int main()
 
 	printf("\n\n");
 	system("pause");
+
+	delete Jungle;
+	delete codeVer;
+
 	return 0;
 }

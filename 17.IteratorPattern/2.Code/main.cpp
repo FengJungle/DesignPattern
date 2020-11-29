@@ -31,5 +31,8 @@ int main()
 
 	printf("\n\n");
 	system("pause");
+
+	delete tv;
+	
 	return 0;
 }

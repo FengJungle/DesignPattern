@@ -28,5 +28,12 @@ int main()
 
 	printf("\n\n");
 	system("pause");
+
+	delete controller;
+	delete Jungle;
+	delete Single;
+	delete Jianmengtu;
+	delete SillyDog;
+
 	return 0;
 }

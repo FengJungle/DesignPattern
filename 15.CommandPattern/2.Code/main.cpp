@@ -44,6 +44,14 @@ int main()
 #endif
 
 	printf("\n\n");
+
+	delete button;
+	delete lampCmd;
+	delete fanCmd;
+	delete button2;
+	delete lampCmd2;
+	delete fanCmd2;
+
 	system("pause");
 	return 0;
 }

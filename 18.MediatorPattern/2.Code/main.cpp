@@ -34,5 +34,13 @@ int main()
 
 	printf("\n\n");
 	system("pause");
+
+	delete mediator;
+	delete fangdong1;
+	delete fangdong2;
+	delete fangdong3;
+	delete jungle;
+	delete jianmengtu;
+
 	return 0;
 }
