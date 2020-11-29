@@ -6,11 +6,14 @@ int main()
 	GameAccount *jungle = new GameAccount("Jungle");
 
 	for (int i = 0; i < 5; i++){
-		printf("µÚ%d¾Ö£º\n", i + 1);
+		printf("%d \n", i + 1);
 		jungle->playCard();
 	}
 
 	printf("\n\n");
 	system("pause");
+
+	delete jungle;
+	
 	return 0;
 }

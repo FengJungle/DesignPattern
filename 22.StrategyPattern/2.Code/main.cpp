@@ -7,22 +7,25 @@ int main()
 	Context* ctx = new Context();
 	int arr[] = { 10, 23, -1, 0, 300, 87, 28, 77, -32, 2 };
 	ctx->setInput(arr, sizeof(arr)/sizeof(int));
-	printf("ÊäÈë£º");
+	printf("input:");
 	ctx->print();
 
-	// Ã°ÅÝÅÅÐò
+	// BubbleSort
 	ctx->setSortStrategy(new BubbleSort());
 	ctx->sort();
 
-	// Ñ¡ÔñÅÅÐò
+	// SelectionSort
 	ctx->setSortStrategy(new SelectionSort());
 	ctx->sort();
 
-	// ²åÈëÅÅÐò
+	// InsertSort
 	ctx->setSortStrategy(new InsertSort());
 	ctx->sort();
 
 	printf("\n\n");
 	system("pause");
+
+	delete ctx;
+
 	return 0;
 }

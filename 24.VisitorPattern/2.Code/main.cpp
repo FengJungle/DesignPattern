@@ -29,8 +29,16 @@ int main()
 	printf("\n\n");
 	shoppingCart->accept(cashier);
 
-
 	printf("\n\n");
 	system("pause");
+
+	delete apple1;
+	delete apple2;
+	delete book1;
+	delete book2;
+	delete cashier;
+	delete jungle;
+	delete shoppingCart;
+
 	return 0;
 }
