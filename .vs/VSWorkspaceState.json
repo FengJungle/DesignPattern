@@ -1,0 +1,18 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\02.FactoryMethod",
+    "\\02.FactoryMethod\\2.Code",
+    "\\03.AbstractFactory",
+    "\\03.AbstractFactory\\2.Code",
+    "\\04.BuilderPattern",
+    "\\04.BuilderPattern\\2.Code",
+    "\\05.PrototypePattern",
+    "\\05.PrototypePattern\\2.Code",
+    "\\06.Singleton",
+    "\\06.Singleton\\2.Code",
+    "\\06.Singleton\\2.Code\\Singleton"
+  ],
+  "SelectedNode": "\\06.Singleton\\2.Code\\Singleton\\main.cpp",
+  "PreviewInSolutionExplorer": false
+}

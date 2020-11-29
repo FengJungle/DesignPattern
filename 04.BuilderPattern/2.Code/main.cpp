@@ -14,6 +14,7 @@ int main()
 	director->setBuilder(builder);
 	house = director->construct();
 	house->printfHouseInfo();
+	delete builder;
 
 	//指定具体建造者B
 	builder = new ConcreteBuilderB();
@@ -22,5 +23,9 @@ int main()
 	house->printfHouseInfo();
 
 	system("pause");
+
+	delete director;
+	delete builder;
+
 	return 0;
 }

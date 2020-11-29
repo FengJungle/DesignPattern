@@ -9,18 +9,18 @@ using namespace std;
 class House
 {
 public:
-	House(){}
-	void setFloor(string iFloor){
+	House() {}
+	void setFloor(string iFloor) {
 		this->floor = iFloor;
 	}
-	void setWall(string iWall){
+	void setWall(string iWall) {
 		this->wall = iWall;
 	}
-	void setRoof(string iRoof){
+	void setRoof(string iRoof) {
 		this->roof = iRoof;
 	}
 	//打印House信息
-	void printfHouseInfo(){
+	void printfHouseInfo() {
 		printf("Floor:%s\t\n", this->floor.c_str());
 		printf("Wall:%s\t\n", this->wall.c_str());
 		printf("Roof:%s\t\n", this->roof.c_str());
@@ -35,8 +35,16 @@ private:
 class AbstractBuilder
 {
 public:
-	AbstractBuilder(){
+	AbstractBuilder() {
 		house = new House();
+	}
+	virtual ~AbstractBuilder()
+	{
+		if (house != nullptr)
+		{
+			delete house;
+			house = nullptr;
+		}
 	}
 	//抽象方法：
 	virtual void buildFloor() = 0;
@@ -51,20 +59,28 @@ public:
 class ConcreteBuilderA :public AbstractBuilder
 {
 public:
-	ConcreteBuilderA(){
+	ConcreteBuilderA() {
 		printf("ConcreteBuilderA\n");
 	}
+	~ConcreteBuilderA()
+	{
+		if (this->house != nullptr)
+		{
+			delete house;
+			house = nullptr;
+		}
+	}
 	//具体实现方法
-	void buildFloor(){
+	void buildFloor() {
 		this->house->setFloor("Floor_A");
 	}
-	void buildWall(){
+	void buildWall() {
 		this->house->setWall("Wall_A");
 	}
-	void buildRoof(){
+	void buildRoof() {
 		this->house->setRoof("Roof_A");
 	}
-	House *getHouse(){
+	House *getHouse() {
 		return this->house;
 	}
 };
@@ -73,20 +89,28 @@ public:
 class ConcreteBuilderB :public AbstractBuilder
 {
 public:
-	ConcreteBuilderB(){
+	ConcreteBuilderB() {
 		printf("ConcreteBuilderB\n");
 	}
+	~ConcreteBuilderA()
+	{
+		if (this->house != nullptr)
+		{
+			delete house;
+			house = nullptr;
+		}
+	}
 	//具体实现方法
-	void buildFloor(){
+	void buildFloor() {
 		this->house->setFloor("Floor_B");
 	}
-	void buildWall(){
+	void buildWall() {
 		this->house->setWall("Wall_B");
 	}
-	void buildRoof(){
+	void buildRoof() {
 		this->house->setRoof("Roof_B");
 	}
-	House *getHouse(){
+	House *getHouse() {
 		return this->house;
 	}
 };
@@ -95,12 +119,20 @@ public:
 class Director
 {
 public:
-	Director(){}
+	Director() :builder(nullptr) {}
+	~Director()
+	{
+		if (this->builder != nullptr)
+		{
+			delete builder;
+			builder = nullptr;
+		}
+	}
 	//具体实现方法
-	void setBuilder(AbstractBuilder *iBuilder){
+	void setBuilder(AbstractBuilder *iBuilder) {
 		this->builder = iBuilder;
 	}
-	House *construct(){
+	House *construct() {
 		builder->buildFloor();
 		builder->buildWall();
 		builder->buildRoof();
