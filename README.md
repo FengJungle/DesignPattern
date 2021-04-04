@@ -1,6 +1,12 @@
 # DesignPattern
 Jungle设计模式系列
 
+## 订正
+* 
+* 2021/04/04：为虚基类添加虚析构函数，避免内存泄露  
+* 2020/11/29：解决内存泄露问题
+*
+
 代码资源：https://github.com/FengJungle/DesignPattern
 
 01.设计模式——设计模式概述
