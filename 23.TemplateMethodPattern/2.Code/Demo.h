@@ -5,6 +5,7 @@
 class AbstractClass
 {
 public:
+	virtual ~AbstractClass(){}
 	// 模板方法，定义一个算法的框架流程
 	void templateMethod(){
 		// do something

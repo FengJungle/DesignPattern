@@ -13,6 +13,7 @@ class Command
 {
 public:
 	Command(){}
+	virtual ~Command(){}
 	// 声明抽象接口：发送命令
 	virtual void execute() = 0;
 private:

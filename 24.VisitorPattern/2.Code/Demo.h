@@ -5,6 +5,7 @@
 class Visitor
 {
 public:
+	virtual ~Visitor() {}
 	virtual void visit(ConcreteElementA*) = 0;
 	virtual void visit(ConcreteElementB*) = 0;
 };
@@ -26,6 +27,7 @@ public:
 class Element
 {
 public:
+	virtual ~Element() {}
 	// 声明抽象方法，以一个抽象访问者的指针作为函数参数
 	virtual void accept(Visitor*) = 0;
 };

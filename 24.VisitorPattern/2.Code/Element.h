@@ -10,6 +10,7 @@ class Element
 {
 public:
 	Element(){};
+	virtual ~Element(){}
 	virtual void accept(Visitor*) = 0;
 	void setPrice(int iPrice){
 		this->price = iPrice;

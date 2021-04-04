@@ -9,6 +9,7 @@ class AbstractNode
 {
 public:
 	AbstractNode(){}
+	virtual ~AbstractNode(){}
 	// 声明抽象接口
 	virtual char interpret() = 0;
 };

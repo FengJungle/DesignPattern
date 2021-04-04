@@ -36,6 +36,7 @@ public:
 	Approver(string iName){
 		setName(iName);
 	}
+	virtual ~Approver(){}
 	// Ìí¼ÓÉÏ¼¶
 	void setSuperior(Approver *iSuperior){
 		this->superior = iSuperior;

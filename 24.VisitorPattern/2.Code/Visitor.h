@@ -14,6 +14,7 @@ class Visitor
 {
 public:
 	Visitor(){};
+	virtual ~Visitor(){}
 	// 声明一组访问方法
 	virtual void visit(Apple*) = 0;
 	virtual void visit(Book*) = 0;

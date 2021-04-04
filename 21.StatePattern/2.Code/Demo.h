@@ -5,6 +5,7 @@
 class State
 {
 public:
+	virtual ~State(){}
 	// 声明抽象方法
 	virtual void handle() = 0;
 };

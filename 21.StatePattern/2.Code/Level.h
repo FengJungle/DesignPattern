@@ -7,6 +7,7 @@ class Level
 {
 public :
 	Level();
+	virtual ~Level(){}
 	// ÉùÃ÷·½·¨
 	void playCard();
 	void play();

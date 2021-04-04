@@ -13,6 +13,7 @@ class Aggregate
 {
 public:
 	Aggregate(){}
+	virtual ~Aggregate(){}
 	virtual Iterator* createIterator() = 0;
 };
 

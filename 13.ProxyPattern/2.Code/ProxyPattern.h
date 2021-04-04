@@ -10,6 +10,7 @@ class Subject
 {
 public:
 	Subject(){}
+	virtual ~Subject(){}
 	virtual void method() = 0;
 };
 
@@ -18,6 +19,7 @@ class RealSubject :public Subject
 {
 public:
 	RealSubject(){}
+	virtual ~RealSubject(){}
 	void method(){
 		printf("调用业务方法\n");
 	}

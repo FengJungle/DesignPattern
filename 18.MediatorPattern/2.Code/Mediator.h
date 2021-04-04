@@ -9,6 +9,7 @@ class Mediator
 {
 public:
 	Mediator(){}
+	virtual ~Mediator(){}
 	// 声明抽象方法
 	virtual void operation(Colleague*) = 0;
 	// 声明注册方法

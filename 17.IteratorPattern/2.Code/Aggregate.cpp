@@ -17,5 +17,5 @@ int Television::getTotalChannelNum(){
 }
 
 void Television::play(int i){
-	printf("ÏÖÔÚ²¥·Å£º%s¡­¡­\n", channelList[i].c_str());
+	printf("ï¿½ï¿½ï¿½Ú²ï¿½ï¿½Å£ï¿½%sï¿½ï¿½ï¿½ï¿½\n", channelList[i].c_str());
 }

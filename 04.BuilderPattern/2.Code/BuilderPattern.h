@@ -5,7 +5,7 @@
 #include <string.h>
 using namespace std;
 
-//²úÆ·ÀàHouse
+//ï¿½ï¿½Æ·ï¿½ï¿½House
 class House
 {
 public:
@@ -19,7 +19,7 @@ public:
 	void setRoof(string iRoof) {
 		this->roof = iRoof;
 	}
-	//´òÓ¡HouseĞÅÏ¢
+	//ï¿½ï¿½Ó¡Houseï¿½ï¿½Ï¢
 	void printfHouseInfo() {
 		printf("Floor:%s\t\n", this->floor.c_str());
 		printf("Wall:%s\t\n", this->wall.c_str());
@@ -31,7 +31,7 @@ private:
 	string roof;
 };
 
-//³éÏó½¨ÔìÕßAbstractBall
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½AbstractBall
 class AbstractBuilder
 {
 public:
@@ -46,7 +46,7 @@ public:
 			house = nullptr;
 		}
 	}
-	//³éÏó·½·¨£º
+	//ï¿½ï¿½ï¿½ó·½·ï¿½ï¿½ï¿½
 	virtual void buildFloor() = 0;
 	virtual void buildWall() = 0;
 	virtual void buildRoof() = 0;
@@ -55,7 +55,7 @@ public:
 	House *house;
 };
 
-//¾ßÌå½¨ÔìÕßConcreteBuilderA
+//ï¿½ï¿½ï¿½å½¨ï¿½ï¿½ï¿½ï¿½ConcreteBuilderA
 class ConcreteBuilderA :public AbstractBuilder
 {
 public:
@@ -70,7 +70,7 @@ public:
 			house = nullptr;
 		}
 	}
-	//¾ßÌåÊµÏÖ·½·¨
+	//ï¿½ï¿½ï¿½ï¿½Êµï¿½Ö·ï¿½ï¿½ï¿½
 	void buildFloor() {
 		this->house->setFloor("Floor_A");
 	}
@@ -85,7 +85,7 @@ public:
 	}
 };
 
-//¾ßÌå½¨ÔìÕßConcreteBuilderB
+//ï¿½ï¿½ï¿½å½¨ï¿½ï¿½ï¿½ï¿½ConcreteBuilderB
 class ConcreteBuilderB :public AbstractBuilder
 {
 public:
@@ -100,7 +100,7 @@ public:
 			house = nullptr;
 		}
 	}
-	//¾ßÌåÊµÏÖ·½·¨
+	//ï¿½ï¿½ï¿½ï¿½Êµï¿½Ö·ï¿½ï¿½ï¿½
 	void buildFloor() {
 		this->house->setFloor("Floor_B");
 	}
@@ -115,7 +115,7 @@ public:
 	}
 };
 
-//Ö¸»ÓÕßDirector
+//Ö¸ï¿½ï¿½ï¿½ï¿½Director
 class Director
 {
 public:
@@ -128,7 +128,7 @@ public:
 			builder = nullptr;
 		}
 	}
-	//¾ßÌåÊµÏÖ·½·¨
+	//ï¿½ï¿½ï¿½ï¿½Êµï¿½Ö·ï¿½ï¿½ï¿½
 	void setBuilder(AbstractBuilder *iBuilder) {
 		this->builder = iBuilder;
 	}

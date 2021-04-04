@@ -12,9 +12,10 @@ public:
 	AbstractSportProduct(){
 
 	}
+	virtual ~AbstractSportProduct(){}
 	//抽象方法：
-	void printName(){};
-	void play(){};
+	virtual void printName(){};
+	virtual void play(){};
 };
 
 //具体产品类Basketball
@@ -72,6 +73,7 @@ public:
 class AbstractFactory
 {
 public:
+	virtual ~AbstractFactory(){}
 	virtual AbstractSportProduct *getSportProduct() = 0;
 };
 

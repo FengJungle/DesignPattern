@@ -6,6 +6,7 @@ class Component
 {
 public:
 	Component(){}
+	virtual ~Component(){}
 	virtual void operation() = 0;
 };
 

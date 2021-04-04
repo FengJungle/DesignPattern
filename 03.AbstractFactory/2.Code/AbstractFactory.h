@@ -12,8 +12,9 @@ public:
 	AbstractBall(){
 
 	}
+	virtual ~AbstractBall(){}
 	//抽象方法：
-	void play(){};
+	virtual void play(){};
 };
 
 //具体产品类Basketball
@@ -47,8 +48,9 @@ class AbstractShirt
 {
 public:
 	AbstractShirt(){}
+	virtual ~AbstractShirt(){}
 	//抽象方法：
-	void wearShirt(){};
+	virtual void wearShirt(){};
 };
 
 //具体产品类BasketballShirt
@@ -81,6 +83,7 @@ public:
 class AbstractFactory
 {
 public:
+	virtual ~AbstractFactory() {}
 	virtual AbstractBall *getBall() = 0;
 	virtual AbstractShirt *getShirt() = 0;
 };

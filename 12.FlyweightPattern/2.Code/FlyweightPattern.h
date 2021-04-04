@@ -10,6 +10,7 @@ class NetDevice
 {
 public:
 	NetDevice(){}
+	virtual ~NetDevice(){}
 	virtual string getName() = 0;
 
 	/*void print(){

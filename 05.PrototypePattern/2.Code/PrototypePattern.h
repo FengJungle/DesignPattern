@@ -20,6 +20,7 @@ class PrototypeWork
 {
 public:
 	PrototypeWork(){}
+	virtual ~PrototypeWork(){}
 	virtual PrototypeWork *clone() = 0;
 
 private:

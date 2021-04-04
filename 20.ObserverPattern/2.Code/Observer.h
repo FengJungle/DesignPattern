@@ -10,6 +10,7 @@ using namespace std;
 class Observer
 {
 public:
+	virtual ~Observer(){}
 	Observer(){}
 	// 声明抽象方法
 	virtual void call(INFO_TYPE infoType, AllyCenter* ac) = 0;

@@ -13,6 +13,7 @@ class Colleague
 {
 public:
 	Colleague(){}
+	virtual ~Colleague(){}
 	void setMediator(Mediator* iMediator){
 		this->mediator = iMediator;
 	}

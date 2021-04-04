@@ -12,9 +12,10 @@ public:
 	AbstractSportProduct(){
 
 	}
+	virtual ~AbstractSportProduct(){}
 	//抽象方法：
-	void printName(){};
-	void play(){};
+	virtual void printName(){};
+	virtual void play(){};
 };
 
 //具体产品类Basketball
@@ -24,6 +25,10 @@ public:
 	Basketball(){
 		printName();
 		play();
+	}
+	~Basketball()
+	{
+
 	}
 	//具体实现方法
 	void printName(){
@@ -42,6 +47,10 @@ public:
 		printName();
 		play();
 	}
+	~Football()
+	{
+
+	}
 	//具体实现方法
 	void printName(){
 		printf("Jungle get Football\n");
@@ -58,6 +67,10 @@ public:
 	Volleyball(){
 		printName();
 		play();
+	}
+	~Volleyball()
+	{
+		
 	}
 	//具体实现方法
 	void printName(){

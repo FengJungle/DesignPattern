@@ -11,6 +11,7 @@ class Controller
 {
 public:
 	Controller(){}
+	virtual ~Controller(){}
 	virtual void pathPlanning() = 0;
 private:
 };

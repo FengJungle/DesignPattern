@@ -8,6 +8,7 @@ class Strategy
 {
 public:
 	Strategy(){}
+	virtual ~Strategy(){}
 	virtual void sort(int arr[], int N) = 0;
 };
 

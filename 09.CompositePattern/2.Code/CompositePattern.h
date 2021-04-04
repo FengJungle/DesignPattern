@@ -14,6 +14,7 @@ public:
 	Component(string iName){
 		this->name = iName;
 	}
+	virtual ~Component(){}
 	//增加一个部门或办公室
 	virtual void add(Component*) = 0;
 	//撤销一个部门或办公室

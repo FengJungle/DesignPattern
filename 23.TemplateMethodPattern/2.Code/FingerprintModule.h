@@ -8,6 +8,7 @@ class FingerprintModule
 {
 public:
 	FingerprintModule(){}
+	virtual ~FingerprintModule(){}
 	void getImage(){
 		printf("²ÉÖ¸ÎÆÍ¼Ïñ\n");
 	}

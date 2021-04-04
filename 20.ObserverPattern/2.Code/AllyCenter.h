@@ -13,6 +13,7 @@ class AllyCenter
 {
 public:
 	AllyCenter();
+	virtual ~AllyCenter(){}
 	// 声明通知方法
 	virtual void notify(INFO_TYPE infoType, std::string name) = 0;
 	// 加入玩家

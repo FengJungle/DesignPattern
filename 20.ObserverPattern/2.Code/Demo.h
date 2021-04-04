@@ -8,6 +8,7 @@ using namespace std;
 class Observer
 {
 public:
+	virtual ~Observer() {}
 	// 声明响应更新方法
 	virtual void update() = 0;
 };
@@ -26,6 +27,7 @@ public:
 class Subject
 {
 public:
+	virtual ~Subject() {}
 	// 添加观察者
 	void attach(Observer* obs){
 		obsList.push_back(obs);

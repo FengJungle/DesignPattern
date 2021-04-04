@@ -11,6 +11,7 @@ class Game
 {
 public:
 	Game(){}
+	virtual ~Game(){}
 	virtual void play() = 0;
 private:
 };
@@ -41,6 +42,7 @@ class Phone
 public:
 	Phone(){
 	}
+	virtual ~Phone(){}
 	//°²×°ÓÎÏ·
 	virtual void setupGame(Game *igame) = 0;
 	virtual void play() = 0;
