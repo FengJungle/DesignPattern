@@ -86,17 +86,17 @@ public:
 class Factory
 {
 public:
-	AbstractSportProduct *getSportProduct(string productName)
+	std::shared_ptr<AbstractSportProduct> getSportProduct(string productName)
 	{
-		AbstractSportProduct *pro = NULL;
+		std::shared_ptr<AbstractSportProduct> pro;
 		if (productName == "Basketball"){
-			pro = new Basketball();
+			pro = std::shared_ptr<AbstractSportProduct>(new Basketball());
 		}
 		else if (productName == "Football"){
-			pro = new Football();
+			pro = std::shared_ptr<AbstractSportProduct>(new Football());
 		}
 		else if (productName == "Volleyball"){
-			pro = new Volleyball();
+			pro = std::shared_ptr<AbstractSportProduct>(new Volleyball());
 		}
 		return pro;
 	}
