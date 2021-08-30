@@ -1,30 +1,22 @@
 #include <iostream>
+#include <memory>
 #include "SimpleFactory.h"
 
 int main()
 {
-	printf("¼òµ¥¹¤³§Ä£Ê½\n");
+	printf("ç®€å•å·¥å‚æ¨¡å¼\n");
 	
-	//¶¨Òå¹¤³§Àà¶ÔÏó
-	Factory *fac = new Factory();
-	AbstractSportProduct *product = NULL;
+	//å®šä¹‰å·¥å‚ç±»å¯¹è±¡
+	std::shared_ptr<Factory> fac = std::make_shared<Factory>();
+	std::shared_ptr<AbstractSportProduct>product = std::shared_ptr<AbstractSportProduct>(fac->getSportProduct("Basketball"));
+	
+	fac = std::make_shared<Factory>();
+	product = std::shared_ptr<AbstractSportProduct>(fac->getSportProduct("Football"));
 
-	product = fac->getSportProduct("Basketball");
-	if (product) {
-		delete product;
-	}
-
-	product = fac->getSportProduct("Football");
-	if (product) {
-		delete product;
-	}
-
-	product = fac->getSportProduct("Volleyball");	
-	if (product) {
-		delete product;
-	}
-
-	delete fac;
+	fac = std::make_shared<Factory>();
+	product = std::shared_ptr<AbstractSportProduct>(fac->getSportProduct("Volleyball"));	
+#ifdef win32
 	system("pause");
+#endif
 	return 0;
 }
