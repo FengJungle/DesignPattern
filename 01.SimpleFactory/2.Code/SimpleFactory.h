@@ -5,20 +5,22 @@
 #include <string.h>
 using namespace std;
 
-//³éÏó²úÆ·ÀàAbstractProduct
+//æŠ½è±¡äº§å“ç±»AbstractProduct
 class AbstractSportProduct
 {
 public:
 	AbstractSportProduct(){
 
 	}
-	virtual ~AbstractSportProduct(){}
-	//³éÏó·½·¨£º
-	virtual void printName(){};
-	virtual void play(){};
+	virtual ~AbstractSportProduct(){};
+	//æŠ½è±¡æ–¹æ³•ï¼š
+	// virtual void printName(){};
+	virtual void printName() = 0;
+	// virtual void play(){};
+	virtual void play() = 0;
 };
 
-//¾ßÌå²úÆ·ÀàBasketball
+//å…·ä½“äº§å“ç±»Basketball
 class Basketball :public AbstractSportProduct
 {
 public:
@@ -30,7 +32,7 @@ public:
 	{
 
 	}
-	//¾ßÌåÊµÏÖ·½·¨
+	//å…·ä½“å®ç°æ–¹æ³•
 	void printName(){
 		printf("Jungle get Basketball\n");
 	}
@@ -39,7 +41,7 @@ public:
 	}
 };
 
-//¾ßÌå²úÆ·ÀàFootball
+//å…·ä½“äº§å“ç±»Football
 class Football :public AbstractSportProduct
 {
 public:
@@ -51,7 +53,7 @@ public:
 	{
 
 	}
-	//¾ßÌåÊµÏÖ·½·¨
+	//å…·ä½“å®ç°æ–¹æ³•
 	void printName(){
 		printf("Jungle get Football\n");
 	}
@@ -60,7 +62,7 @@ public:
 	}
 };
 
-//¾ßÌå²úÆ·ÀàVolleyball
+//å…·ä½“äº§å“ç±»Volleyball
 class Volleyball :public AbstractSportProduct
 {
 public:
@@ -72,7 +74,7 @@ public:
 	{
 		
 	}
-	//¾ßÌåÊµÏÖ·½·¨
+	//å…·ä½“å®ç°æ–¹æ³•
 	void printName(){
 		printf("Jungle get Volleyball\n");
 	}
@@ -84,17 +86,17 @@ public:
 class Factory
 {
 public:
-	AbstractSportProduct *getSportProduct(string productName)
+	std::shared_ptr<AbstractSportProduct> getSportProduct(string productName)
 	{
-		AbstractSportProduct *pro = NULL;
+		std::shared_ptr<AbstractSportProduct> pro;
 		if (productName == "Basketball"){
-			pro = new Basketball();
+			pro = std::shared_ptr<AbstractSportProduct>(new Basketball());
 		}
 		else if (productName == "Football"){
-			pro = new Football();
+			pro = std::shared_ptr<AbstractSportProduct>(new Football());
 		}
 		else if (productName == "Volleyball"){
-			pro = new Volleyball();
+			pro = std::shared_ptr<AbstractSportProduct>(new Volleyball());
 		}
 		return pro;
 	}
