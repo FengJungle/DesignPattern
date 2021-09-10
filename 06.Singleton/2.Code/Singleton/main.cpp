@@ -53,9 +53,18 @@ int main()
 #else
 #define THREAD_NUM 5
 #include<pthread.h>
-void* callSingleton(void *pPM)
+void* callSingleton_Lazy(void *pPM)
 {
-	Singleton *s = Singleton::getInstance();
+	Singleton_Lazy *s = Singleton_Lazy::getInstance();
+	pthread_t nThreadNum = pthread_self();
+	// sleep(50);
+	printf("线程编号为%ld\n", nThreadNum);
+	return 0;
+}
+
+void* callSingleton_Hungry(void *pPM)
+{
+	Singleton_Hungry *s = Singleton_Hungry::getInstance();
 	pthread_t nThreadNum = pthread_self();
 	// sleep(50);
 	printf("线程编号为%ld\n", nThreadNum);
@@ -66,11 +75,20 @@ int main()
 {
 	pthread_t threads_pool[THREAD_NUM];
 	int tids[THREAD_NUM];
+	printf("Singleton Lazy mode:\n");
 	for(int i = 0; i < THREAD_NUM; i++) 
 	{
-		tids[i] = pthread_create(&threads_pool[i], NULL, callSingleton, NULL);
+		tids[i] = pthread_create(&threads_pool[i], NULL, callSingleton_Lazy, NULL);
 		pthread_join(threads_pool[i], (void**)&tids[i]);
 	}
+
+	printf("Singleton Hungry mode:\n");
+	for(int i = 0; i < THREAD_NUM; i++) 
+	{
+		tids[i] = pthread_create(&threads_pool[i], NULL, callSingleton_Hungry, NULL);
+		pthread_join(threads_pool[i], (void**)&tids[i]);
+	}
+
 	return 0;
 }
 
