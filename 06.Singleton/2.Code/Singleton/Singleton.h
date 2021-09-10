@@ -13,7 +13,7 @@ public:
 		if (instance == NULL){
 			m_mutex.lock();
 			if (instance == NULL){
-				printf("创建新的实例\n");
+				printf("鍒涘缓鏂扮殑瀹炰緥\n");
 				instance = new Singleton();
 			}
 			m_mutex.unlock();
