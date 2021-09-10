@@ -51,18 +51,18 @@ int main()
 }
 /* for linux platform */
 #else
-#define THREAD_NUM 5
+#define THREAD_NUM 6
 #include<pthread.h>
-void* callSingleton_Lazy(void *pPM)
+void* callSingleton_Lazy(void*)
 {
 	Singleton_Lazy *s = Singleton_Lazy::getInstance();
 	pthread_t nThreadNum = pthread_self();
 	// sleep(50);
-	printf("线程编号为%ld\n", nThreadNum);
+	printf("线程编号为%lu\n", nThreadNum);
 	return 0;
 }
 
-void* callSingleton_Hungry(void *pPM)
+void* callSingleton_Hungry(void*)
 {
 	Singleton_Hungry *s = Singleton_Hungry::getInstance();
 	pthread_t nThreadNum = pthread_self();
@@ -74,21 +74,37 @@ void* callSingleton_Hungry(void *pPM)
 int main()
 {
 	pthread_t threads_pool[THREAD_NUM];
-	int tids[THREAD_NUM];
-	printf("Singleton Lazy mode:\n");
-	for(int i = 0; i < THREAD_NUM; i++) 
+	int tids[THREAD_NUM], i;
+	void* status;
+	pthread_attr_t attr;
+
+	pthread_attr_init(&attr);
+	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+
+	for(i = 0; i < THREAD_NUM; i++) 
 	{
-		tids[i] = pthread_create(&threads_pool[i], NULL, callSingleton_Lazy, NULL);
-		pthread_join(threads_pool[i], (void**)&tids[i]);
+		if(i < THREAD_NUM / 2)
+			tids[i] = pthread_create(&threads_pool[i], NULL, callSingleton_Lazy, (void*)&i);
+		else 
+			tids[i] = pthread_create(&threads_pool[i], NULL, callSingleton_Hungry, (void*)&i);
+		if(tids[i]) 
+		{
+			printf("Error: unable to create thread.\n");
+			exit(-1);
+		}
 	}
 
-	printf("Singleton Hungry mode:\n");
-	for(int i = 0; i < THREAD_NUM; i++) 
+	pthread_attr_destroy(&attr);
+	for(i = 0; i < THREAD_NUM; i++) 
 	{
-		tids[i] = pthread_create(&threads_pool[i], NULL, callSingleton_Hungry, NULL);
-		pthread_join(threads_pool[i], (void**)&tids[i]);
+		tids[i] = pthread_join(threads_pool[i], &status);
+		if(tids[i])
+		{
+			printf("Error: unable to join.\n");
+			exit(-1);
+		}
 	}
-
+	printf("main exiting.\n");
 	return 0;
 }
 
