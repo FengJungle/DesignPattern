@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Singleton.h"
 
-/*µ¥ÀıÄ£Ê½¼òµ¥ÊµÏÖ*/
+/*å•ä¾‹æ¨¡å¼ç®€å•å®ç°*/
 /*
 int main()
 {
@@ -13,11 +13,12 @@ int main()
 }
 */
 
-/*·ÇÏß³Ì°²È« µ¥ÀıÄ£Ê½*/
+#ifdef win32
+/*éçº¿ç¨‹å®‰å…¨ å•ä¾‹æ¨¡å¼*/
 #include <process.h>
 #include <Windows.h>
 
-//¶àÏß³Ì£¬Ïß³ÌÊıÄ¿£º5
+//å¤šçº¿ç¨‹ï¼Œçº¿ç¨‹æ•°ç›®ï¼š5
 #define THREAD_NUM 5
 
 unsigned int __stdcall CallSingleton(void *pPM)
@@ -25,7 +26,7 @@ unsigned int __stdcall CallSingleton(void *pPM)
 	Singleton *s = Singleton::getInstance();
 	int nThreadNum = *(int *)pPM; 
 	Sleep(50);
-	//printf("Ïß³Ì±àºÅÎª%d\n", nThreadNum);
+	//printf("çº¿ç¨‹ç¼–å·ä¸º%d\n", nThreadNum);
 	return 0;
 }
 
@@ -34,17 +35,77 @@ int main()
 {
 	HANDLE  handle[THREAD_NUM];
 
-	//Ïß³Ì±àºÅ
+	//çº¿ç¨‹ç¼–å·
 	int threadNum = 0;
 	while (threadNum < THREAD_NUM)
 	{
 		handle[threadNum] = (HANDLE)_beginthreadex(NULL, 0, CallSingleton, &threadNum, 0, NULL);
-		//µÈ×ÓÏß³Ì½ÓÊÕµ½²ÎÊıÊ±Ö÷Ïß³Ì¿ÉÄÜ¸Ä±äÁËÕâ¸öiµÄÖµ
+		//ç­‰å­çº¿ç¨‹æ¥æ”¶åˆ°å‚æ•°æ—¶ä¸»çº¿ç¨‹å¯èƒ½æ”¹å˜äº†è¿™ä¸ªiçš„å€¼
 		threadNum++;
 	}
-	//±£Ö¤×ÓÏß³ÌÒÑÈ«²¿ÔËĞĞ½áÊø
+	//ä¿è¯å­çº¿ç¨‹å·²å…¨éƒ¨è¿è¡Œç»“æŸ
 	WaitForMultipleObjects(THREAD_NUM, handle, TRUE, INFINITE);
 
 	system("pause");
 	return 0;
 }
+/* for linux platform */
+#else
+#define THREAD_NUM 6
+#include<pthread.h>
+void* callSingleton_Lazy(void*)
+{
+	Singleton_Lazy *s = Singleton_Lazy::getInstance();
+	pthread_t nThreadNum = pthread_self();
+	// sleep(50);
+	printf("çº¿ç¨‹ç¼–å·ä¸º%lu\n", nThreadNum);
+	return 0;
+}
+
+void* callSingleton_Hungry(void*)
+{
+	Singleton_Hungry *s = Singleton_Hungry::getInstance();
+	pthread_t nThreadNum = pthread_self();
+	// sleep(50);
+	printf("çº¿ç¨‹ç¼–å·ä¸º%ld\n", nThreadNum);
+	return 0;
+}
+
+int main()
+{
+	pthread_t threads_pool[THREAD_NUM];
+	int tids[THREAD_NUM], i;
+	void* status;
+	pthread_attr_t attr;
+
+	pthread_attr_init(&attr);
+	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+
+	for(i = 0; i < THREAD_NUM; i++) 
+	{
+		if(i < THREAD_NUM / 2)
+			tids[i] = pthread_create(&threads_pool[i], NULL, callSingleton_Lazy, (void*)&i);
+		else 
+			tids[i] = pthread_create(&threads_pool[i], NULL, callSingleton_Hungry, (void*)&i);
+		if(tids[i]) 
+		{
+			printf("Error: unable to create thread.\n");
+			exit(-1);
+		}
+	}
+
+	pthread_attr_destroy(&attr);
+	for(i = 0; i < THREAD_NUM; i++) 
+	{
+		tids[i] = pthread_join(threads_pool[i], &status);
+		if(tids[i])
+		{
+			printf("Error: unable to join.\n");
+			exit(-1);
+		}
+	}
+	printf("main exiting.\n");
+	return 0;
+}
+
+#endif
