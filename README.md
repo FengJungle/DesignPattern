@@ -10,6 +10,8 @@ Jungle设计模式系列
 * 2020/11/29：解决内存泄露问题
 * 
 
+## 目录
+
 代码资源：https://github.com/FengJungle/DesignPattern
 
 01.设计模式——设计模式概述
@@ -115,3 +117,8 @@ Jungle设计模式系列
 26.设计模式（二十六）——模板方法模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/102994585
+
+## 其他
+
+设计模式那么多！面试官会怎么问？  
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/120557373
