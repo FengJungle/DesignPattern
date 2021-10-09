@@ -5,7 +5,7 @@
 #include <time.h>
 using namespace std;
 
-// ³éÏóÖ÷Ìâ½ÇÉ«
+// æŠ½è±¡ä¸»é¢˜è§’è‰²
 class Subject
 {
 public:
@@ -14,18 +14,18 @@ public:
 	virtual void method() = 0;
 };
 
-// ÕæÊµÖ÷Ìâ½ÇÉ«
+// çœŸå®ä¸»é¢˜è§’è‰²
 class RealSubject :public Subject
 {
 public:
 	RealSubject(){}
 	virtual ~RealSubject(){}
 	void method(){
-		printf("µ÷ÓÃÒµÎñ·½·¨\n");
+		printf("è°ƒç”¨ä¸šåŠ¡æ–¹æ³•\n");
 	}
 };
 
-// LogÀà
+// Logç±»
 class Log
 {
 public:
@@ -33,13 +33,13 @@ public:
 	string getTime(){
 		time_t t = time(NULL);
 		char ch[64] = { 0 };
-		//Äê-ÔÂ-ÈÕ Ê±:·Ö:Ãë
+		//å¹´-æœˆ-æ—¥ æ—¶:åˆ†:ç§’
 		strftime(ch, sizeof(ch)-1, "%Y-%m-%d %H:%M:%S", localtime(&t));     
 		return ch;
 	}
 };
 
-// ´úÀíÀà
+// ä»£ç†ç±»
 class Proxy:public Subject
 {
 public:
@@ -47,8 +47,14 @@ public:
 		realSubject = new RealSubject();
 		log = new Log();
 	}
+	~Proxy(){
+		delete realSubject;
+		delete log;
+		realSubject = nullptr;
+		log = nullptr;
+	}
 	void preCallMethod(){
-		printf("·½·¨method()±»µ÷ÓÃ£¬µ÷ÓÃÊ±¼äÎª%s\n",log->getTime().c_str());
+		printf("æ–¹æ³•method()è¢«è°ƒç”¨ï¼Œè°ƒç”¨æ—¶é—´ä¸º%s\n",log->getTime().c_str());
 	}
 	void method(){
 		preCallMethod();
@@ -56,7 +62,7 @@ public:
 		postCallMethod();
 	}
 	void postCallMethod(){
-		printf("·½·¨method()µ÷ÓÃµ÷ÓÃ³É¹¦!\n");
+		printf("æ–¹æ³•method()è°ƒç”¨è°ƒç”¨æˆåŠŸ!\n");
 	}
 private:
 	RealSubject *realSubject;
