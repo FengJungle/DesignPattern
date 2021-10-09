@@ -10,6 +10,7 @@ int main()
 	printf("\n\n");
 
 	delete subject;
+	subject = nullptr;
 
 	system("pause");
 	return 0;
