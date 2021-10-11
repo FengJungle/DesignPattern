@@ -5,22 +5,22 @@
 #include <time.h>
 using namespace std;
 
-//  ÃüÁî¶ÓÁÐÀà
+//  å‘½ä»¤é˜Ÿåˆ—ç±»
 #define COMMAND_QUEUE
 
-// ³éÏóÃüÁîÀà Command
+// æŠ½è±¡å‘½ä»¤ç±» Command
 class Command
 {
 public:
 	Command(){}
 	virtual ~Command(){}
-	// ÉùÃ÷³éÏó½Ó¿Ú£º·¢ËÍÃüÁî
+	// å£°æ˜ŽæŠ½è±¡æŽ¥å£ï¼šå‘é€å‘½ä»¤
 	virtual void execute() = 0;
 private:
 	Command *command;
 };
 
-// ½ÓÊÕÕß£ºµçµÆÀà
+// æŽ¥æ”¶è€…ï¼šç”µç¯ç±»
 class Lamp
 {
 public :
@@ -42,7 +42,7 @@ private:
 	bool lampState;
 };
 
-// ½ÓÊÕÕß£º·çÉÈÀà
+// æŽ¥æ”¶è€…ï¼šé£Žæ‰‡ç±»
 class Fan
 {
 public:
@@ -64,15 +64,19 @@ private:
 	bool fanState;
 };
 
-// ¾ßÌåÃüÁîÀà LampCommand
+// å…·ä½“å‘½ä»¤ç±» LampCommand
 class LampCommand :public Command
 {
 public:
 	LampCommand(){
-		printf("¿ª¹Ø¿ØÖÆµçµÆ\n");
+		printf("å¼€å…³æŽ§åˆ¶ç”µç¯\n");
 		lamp = new Lamp();
 	}
-	// ÊµÏÖexecute()
+	~LampCommand(){
+		delete lamp;
+		lamp = nullptr;
+	}
+	// å®žçŽ°execute()
 	void execute(){
 		if (lamp->getLampState()){
 			lamp->off();
@@ -85,15 +89,19 @@ private:
 	Lamp *lamp;
 };
 
-// ¾ßÌåÃüÁîÀà FanCommand
+// å…·ä½“å‘½ä»¤ç±» FanCommand
 class FanCommand :public Command
 {
 public:
 	FanCommand(){
-		printf("¿ª¹Ø¿ØÖÆ·çÉÈ\n");
+		printf("å¼€å…³æŽ§åˆ¶é£Žæ‰‡\n");
 		fan = new Fan();
 	}
-	// ÊµÏÖexecute()
+	~FanCommand(){
+		delete lamp;
+		lamp = nullptr;
+	}
+	// å®žçŽ°execute()
 	void execute(){
 		if (fan->getFanState()){
 			fan->off();
@@ -106,18 +114,18 @@ private:
 	Fan *fan;
 };
 
-// µ÷ÓÃÕß Button
+// è°ƒç”¨è€… Button
 class Button
 {
 public:
 	Button(){}
-	// ×¢Èë¾ßÌåÃüÁîÀà¶ÔÏó
+	// æ³¨å…¥å…·ä½“å‘½ä»¤ç±»å¯¹è±¡
 	void setCommand(Command *cmd){
 		this->command = cmd;
 	}
-	// ·¢ËÍÃüÁî£º´¥Ãþ°´Å¥
+	// å‘é€å‘½ä»¤ï¼šè§¦æ‘¸æŒ‰é’®
 	void touch(){
-		printf("´¥Ãþ¿ª¹Ø:");
+		printf("è§¦æ‘¸å¼€å…³:");
 		command->execute();
 	}
 private:
@@ -126,10 +134,10 @@ private:
 
 #ifdef COMMAND_QUEUE
 /*************************************/
-/*             ÃüÁî¶ÓÁÐ              */
+/*             å‘½ä»¤é˜Ÿåˆ—              */
 #include <vector>
 
-// ÃüÁî¶ÓÁÐÀà
+// å‘½ä»¤é˜Ÿåˆ—ç±»
 class CommandQueue
 {
 public:
@@ -149,18 +157,18 @@ private:
 
 };
 
-// µ÷ÓÃÕß
+// è°ƒç”¨è€…
 class Button2
 {
 public:
 	Button2(){}
-	// ×¢Èë¾ßÌåÃüÁî¶ÓÁÐÀà¶ÔÏó
+	// æ³¨å…¥å…·ä½“å‘½ä»¤é˜Ÿåˆ—ç±»å¯¹è±¡
 	void setCommandQueue(CommandQueue *cmdQueue){
 		this->cmdQueue = cmdQueue;
 	}
-	// ·¢ËÍÃüÁî£º´¥Ãþ°´Å¥
+	// å‘é€å‘½ä»¤ï¼šè§¦æ‘¸æŒ‰é’®
 	void touch(){
-		printf("´¥Ãþ¿ª¹Ø:");
+		printf("è§¦æ‘¸å¼€å…³:");
 		cmdQueue->execute();
 	}
 private:
