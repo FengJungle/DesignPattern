@@ -12,6 +12,7 @@ class Iterator
 {
 public:
 	Iterator(){}
+	virtual ~Iterator(){}
 	// 声明抽象遍历方法
 	virtual void first() = 0;
 	virtual void last() = 0;

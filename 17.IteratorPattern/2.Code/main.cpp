@@ -33,6 +33,7 @@ int main()
 	system("pause");
 
 	delete tv;
+	delete remoteControl;
 	
 	return 0;
 }
