@@ -2,6 +2,9 @@
 #define __INTERPRETOR_PATTERN_H__
 
 #include <vector>
+#include <stdio.h>
+#include <iostream>
+#include <string.h>
 using namespace std;
 
 // 抽象表达式类
@@ -87,17 +90,17 @@ public:
 		this->input = iInput;
 	}
 	void handle(){
-		AbstractNode      *left = NULL;
-		AbstractNode     *right = NULL;
-		AbstractNode        *op = NULL;
-		AbstractNode  *sentence = NULL;
+		AbstractNode      *left = nullptr;
+		AbstractNode     *right = nullptr;
+		AbstractNode        *op = nullptr;
+		AbstractNode  *sentence = nullptr;
 		string iInput = this->input;
 		vector<string>inputList;
 		char* inputCh = const_cast<char*>(iInput.c_str());
 		char *token = strtok(inputCh, " ");
-		while (token != NULL){
+		while (token != nullptr){
 			inputList.push_back(token);
-			token = strtok(NULL, " ");
+			token = strtok(nullptr, " ");
 		}
 		for (int i = 0; i < inputList.size() - 2; i += 2){
 			left = new ValueNode(*(inputList[i].c_str()));
@@ -105,6 +108,15 @@ public:
 			right = new ValueNode(*(inputList[i+2].c_str()));
 			sentence = new SentenceNode(left, right, op);
 			inputList[i + 2] = string(1, sentence->interpret());
+
+			delete left;
+			delete right;
+			delete op;
+			delete sentence;
+			left = nullptr;
+			right = nullptr;
+			op = nullptr;
+			sentence = nullptr;
 		}
 		string tmpRes = inputList[inputList.size() - 1];
 		if (tmpRes == "1"){
