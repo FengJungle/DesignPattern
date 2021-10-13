@@ -64,6 +64,9 @@ int main()
 	Observer *obs = new ConcreteObserver();
 	sub->attach(obs);
 	sub->notify();
+
+	delete sub;
+	delete obs;
 	return 0;
 }
 #endif

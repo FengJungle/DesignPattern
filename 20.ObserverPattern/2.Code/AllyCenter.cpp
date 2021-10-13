@@ -3,24 +3,24 @@
 
 /***********   AllyCenter    ****************/
 AllyCenter::AllyCenter(){
-	printf("´ó¼ª´óÀû£¬½ñÍí³Ô¼¦!\n");
+	printf("å¤§å‰å¤§åˆ©ï¼Œä»Šæ™šåƒé¸¡!\n");
 }
 
-// ¼ÓÈëÍæ¼Ò
+// åŠ å…¥çŽ©å®¶
 void AllyCenter::join(Observer* player){
 	if (playerList.size() == 4){
-		printf("Íæ¼ÒÒÑÂú\n");
+		printf("çŽ©å®¶å·²æ»¡!\n");
 		return;
 	}
-	printf("Íæ¼Ò %s ¼ÓÈë\n", player->getName().c_str());
+	printf("çŽ©å®¶ %s åŠ å…¥\n", player->getName().c_str());
 	playerList.push_back(player);
 	if (playerList.size() == 4){
-		printf("×é¶Ó³É¹¦£¬²»ÒªËË£¬Ò»ÆðÉÏ£¡\n");
+		printf("ç»„é˜ŸæˆåŠŸï¼Œä¸è¦æ€‚ï¼Œä¸€èµ·ä¸Šï¼\n");
 	}
 }
-// ÒÆ³ýÍæ¼Ò
+// ç§»é™¤çŽ©å®¶
 void AllyCenter::remove(Observer* player){
-	printf("Íæ¼Ò %s ÍË³ö\n", player->getName().c_str());
+	printf("çŽ©å®¶ %s é€€å‡º\n", player->getName().c_str());
 	//playerList.remove(player);
 }
 /***********   AllyCenter    ****************/
@@ -31,7 +31,7 @@ AllyCenterController::AllyCenterController(){
 
 }
 
-// ÊµÏÖÍ¨Öª·½·¨
+// å®žçŽ°é€šçŸ¥æ–¹æ³•
 void AllyCenterController::notify(INFO_TYPE infoType, std::string name){
 	switch (infoType){
 	case RESOURCE:
