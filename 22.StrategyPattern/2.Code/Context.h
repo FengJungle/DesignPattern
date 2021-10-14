@@ -9,14 +9,29 @@ class Context
 {
 public:
 	Context(){
-		arr = NULL;
+		arr = nullptr;
 		N = 0;
+		sortStrategy = nullptr;
 	}
 	Context(int iArr[], int iN){
 		this->arr = iArr;
 		this->N = iN;
+		sortStrategy = nullptr;
+	}
+	~Context()
+	{
+		if(sortStrategy)
+		{
+			delete sortStrategy;
+			sortStrategy = nullptr;
+		}
 	}
 	void setSortStrategy(Strategy* iSortStrategy){
+		if(sortStrategy)
+		{
+			delete sortStrategy;
+			sortStrategy = nullptr;
+		}
 		this->sortStrategy = iSortStrategy;
 	}
 	void sort(){
