@@ -127,3 +127,7 @@ Jungle设计模式系列
 28.划重点：面试中单例模式的考点！（C++版本）
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/120591638
+
+29.new也可以创建对象，为什么需要工厂模式？
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/120754301
