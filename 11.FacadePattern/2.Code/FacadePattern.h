@@ -1,47 +1,48 @@
 #ifndef __FACADE_PATTERN_H__
 #define __FACADE_PATTERN_H__
 
-//子系统：内存
+#include <stdio.h>
+
+// subsystem: Memory
 class Memory
 {
 public:
 	Memory(){}
 	void selfCheck(){
-		printf("…………内存自检……\n");
+		printf("memory selfchecking......\n");
 	}
 };
 
-//子系统：CPU
+// subsystem: CPU
 class CPU
 {
 public:
 	CPU(){}
 	void run(){
-		printf("…………运行CPU运行……\n");
+		printf("running cpu......\n");
 	}
 };
 
-//子系统：硬盘
+// subsystem: hardDisk
 class HardDisk
 {
 public:
 	HardDisk(){}
 	void read(){
-		printf("…………读取硬盘……\n");
+		printf("reading hardDisk......\n");
 	}
 };
 
-//子系统：操作系统
+// subsystem: OS
 class OS
 {
 public:
 	OS(){}
 	void load(){
-		printf("…………载入操作系统……\n");
+		printf("loading os.....\n");
 	}
 };
 
-//外观类
 class Facade
 {
 public:
@@ -51,13 +52,25 @@ public:
 		hardDisk = new HardDisk();
 		os = new OS();
 	}
+	~Facade(){
+		delete memory;
+		delete cpu;
+		delete hardDisk;
+		delete os;
+		memory = nullptr;
+		cpu = nullptr;
+		hardDisk = nullptr;
+		os = nullptr;
+	}
+	Facade(const Facade& facade) = delete;
+	Facade operator=(const Facade& facade) = delete;
 	void powerOn(){
-		printf("正在开机……\n");
+		printf("power on鈥︹�n");
 		memory->selfCheck();
 		cpu->run();
 		hardDisk->read();
 		os->load();
-		printf("开机完成！\n");
+		printf("ready!\n");
 	}
 private:
 	Memory *memory;
