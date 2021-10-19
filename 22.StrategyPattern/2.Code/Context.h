@@ -18,6 +18,8 @@ public:
 		this->N = iN;
 		sortStrategy = nullptr;
 	}
+	Context(const Context& context) = delete;
+	Context& operator=(const Context&) = delete;
 	~Context()
 	{
 		if(sortStrategy)
