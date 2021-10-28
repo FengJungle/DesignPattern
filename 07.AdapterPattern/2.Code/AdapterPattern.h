@@ -6,7 +6,7 @@
 #include <mutex>
 using namespace std;
 
-//Ŀ�������
+// 目标抽象类
 class Controller
 {
 public:
@@ -16,27 +16,27 @@ public:
 private:
 };
 
-//��������DxfParser
+// 适配者类DxfParser
 class DxfParser
 {
 public:
 	DxfParser(){}
 	void parseFile(){
-		printf("�����ļ���ȡ����\n");
+		printf("Parse dxf file\n");
 	}
 };
 
-//��������PathPlanner
+// 适配者类PathPlanner
 class PathPlanner
 {
 public:
 	PathPlanner(){}
 	void calculate(){
-		printf("����ӹ�·��\n");
+		printf("calculate path\n");
 	}
 };
 
-//��������Adapter
+// 适配器类Adapter
 class Adapter:public Controller
 {
 public:
@@ -51,7 +51,7 @@ public:
 	Adapter(const Adapter& other) = delete;
 	Adapter& operator=(const Adapter& ) = delete;
 	void pathPlanning(){
-		printf("·���滮��\n");
+		printf("pathPlanning\n");
 		dxfParser->parseFile();
 		pathPlanner->calculate();
 	}
