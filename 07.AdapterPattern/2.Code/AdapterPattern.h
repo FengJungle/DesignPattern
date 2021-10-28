@@ -6,7 +6,7 @@
 #include <mutex>
 using namespace std;
 
-//Ä¿±ê³éÏóÀà
+//Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 class Controller
 {
 public:
@@ -16,27 +16,27 @@ public:
 private:
 };
 
-//ÊÊÅäÕßÀàDxfParser
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DxfParser
 class DxfParser
 {
 public:
 	DxfParser(){}
 	void parseFile(){
-		printf("½âÎöÎÄ¼þÌáÈ¡Êý¾Ý\n");
+		printf("ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½\n");
 	}
 };
 
-//ÊÊÅäÕßÀàPathPlanner
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PathPlanner
 class PathPlanner
 {
 public:
 	PathPlanner(){}
 	void calculate(){
-		printf("¼ÆËã¼Ó¹¤Â·¾¶\n");
+		printf("ï¿½ï¿½ï¿½ï¿½Ó¹ï¿½Â·ï¿½ï¿½\n");
 	}
 };
 
-//ÊÊÅäÆ÷ÀàAdapter
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Adapter
 class Adapter:public Controller
 {
 public:
@@ -44,8 +44,14 @@ public:
 		dxfParser = new DxfParser();
 		pathPlanner = new PathPlanner();
 	}
+	~Adapter(){
+		delete dxfParser;
+		delete pathPlanner;
+	}
+	Adapter(const Adapter& other) = delete;
+	Adapter& operator=(const Adapter& ) = delete;
 	void pathPlanning(){
-		printf("Â·¾¶¹æ»®£º\n");
+		printf("Â·ï¿½ï¿½ï¿½æ»®ï¿½ï¿½\n");
 		dxfParser->parseFile();
 		pathPlanner->calculate();
 	}
