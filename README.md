@@ -133,6 +133,6 @@ Jungle设计模式系列
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/120754301
 
-30. Qt中的设计模式
+30.Qt中的设计模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/120936720  
