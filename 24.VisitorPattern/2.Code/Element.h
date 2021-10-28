@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-// 抽象元素
+// 鎶借薄鍏冪礌
 class Element
 {
 public:
@@ -36,7 +36,7 @@ private:
 	string name;
 };
 
-// 具体元素：Apple
+// 鍏蜂綋鍏冪礌锛欰pple
 class Apple :public Element
 {
 public:
@@ -45,7 +45,7 @@ public:
 	void accept(Visitor*);
 };
 
-// 具体元素：Book
+// 鍏蜂綋鍏冪礌锛欱ook
 class Book :public Element
 {
 public:

@@ -1,21 +1,25 @@
 #include "Colleague.h"
 #include "Mediator.h"
 
-Tenant::Tenant(){
+Tenant::Tenant()
+{
 	name = "none";
 	setPersonType(NONE_PERSON);
 }
 
-Tenant::Tenant(string iName){
+Tenant::Tenant(string iName)
+{
 	name = iName;
 	setPersonType(TENANT);
 }
 
-void Tenant::ask(){
-	printf("×â¿Í%sÑ¯ÎÊ·¿¶«ĞÅÏ¢\n", name.c_str()); 
+void Tenant::ask()
+{
+	printf("ç§Ÿå®¢%sè¯¢é—®æˆ¿ä¸œä¿¡æ¯\n", name.c_str());
 	(this->getMediator())->operation(this);
 }
 
-void Tenant::answer(){
-	printf("×â¿ÍĞÕÃû£º%s\n", name.c_str());
+void Tenant::answer()
+{
+	printf("ç§Ÿå®¢å§“åï¼š%s\n", name.c_str());
 }

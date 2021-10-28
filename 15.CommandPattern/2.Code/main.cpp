@@ -3,11 +3,11 @@
 
 int main()
 {
-	// 实例化调用者：按钮
+	// 瀹炰緥鍖栬皟鐢ㄨ�咃細鎸夐挳
 	Button *button = new Button();
 	Command *lampCmd, *fanCmd;
 
-	// 按钮控制电灯
+	// 鎸夐挳鎺у埗鐢电伅
 	lampCmd = new LampCommand();
 	button->setCommand(lampCmd);
 	button->touch();
@@ -16,7 +16,7 @@ int main()
 
 	printf("\n\n");
 
-	// 按钮控制风扇
+	// 鎸夐挳鎺у埗椋庢墖
 	fanCmd = new FanCommand();
 	button->setCommand(fanCmd);
 	button->touch();
@@ -30,11 +30,9 @@ int main()
 	Command *lampCmd2, *fanCmd2;
 	CommandQueue *cmdQueue = new CommandQueue();
 
-	// 按钮控制电灯
 	lampCmd2 = new LampCommand();
 	cmdQueue->addCommand(lampCmd2);
 
-	// 按钮控制风扇
 	fanCmd2 = new FanCommand();
 	cmdQueue->addCommand(fanCmd2);
 

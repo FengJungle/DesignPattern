@@ -7,13 +7,13 @@
 #include <vector>
 using namespace std;
 
-// ³éÏóµü´úÆ÷
+// æŠ½è±¡è¿­ä»£å™¨
 class Iterator
 {
 public:
 	Iterator(){}
 	virtual ~Iterator(){}
-	// ÉùÃ÷³éÏó±éÀú·½·¨
+	// å£°æ˜æŠ½è±¡éå†æ–¹æ³•
 	virtual void first() = 0;
 	virtual void last() = 0;
 	virtual void next() = 0;
@@ -25,7 +25,7 @@ private:
 
 };
 
-// Ò£¿ØÆ÷£º¾ßÌåµü´úÆ÷
+// é¥æ§å™¨ï¼šå…·ä½“è¿­ä»£å™¨
 class RemoteControl :public Iterator
 {
 public:
@@ -35,7 +35,7 @@ public:
 		cursor = -1;
 		totalNum = tv->getTotalChannelNum();
 	}
-	// ÊµÏÖ¸÷¸ö±éÀú·½·¨
+	// å®ç°å„ä¸ªéå†æ–¹æ³•
 	void first(){
 		cursor = 0;
 	}
@@ -58,11 +58,11 @@ public:
 		tv->play(cursor);
 	}
 private:
-	// ÓÎ±ê
+	// æ¸¸æ ‡
 	int cursor;
-	// ×ÜµÄÆµµÀÊıÄ¿
+	// æ€»çš„é¢‘é“æ•°ç›®
 	int totalNum;
-	// µçÊÓ
+	// ç”µè§†
 	Television* tv;
 };
 

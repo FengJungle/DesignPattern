@@ -3,16 +3,16 @@
 
 int main()
 {
-	vector<string> channelList = { "ĞÂÎÅÆµµÀ", "²Æ¾­ÆµµÀ", "ÌåÓıÆµµÀ", "µçÓ°ÆµµÀ", "ÒôÀÖÆµµÀ", "Å©ÒµÆµµÀ", "ËÄ´¨ÎÀÊÓ", "³É¶¼ÎÀÊÓ" };
-	// ´´½¨µçÊÓ
+	vector<string> channelList = { "æ–°é—»é¢‘é“", "è´¢ç»é¢‘é“", "ä½“è‚²é¢‘é“", "ç”µå½±é¢‘é“", "éŸ³ä¹é¢‘é“", "å†œä¸šé¢‘é“", "å››å·å«è§†", "æˆéƒ½å«è§†" };
+	// åˆ›å»ºç”µè§†
 	Television *tv = new Television(channelList);
-	// ´´½¨Ò£¿ØÆ÷
+	// åˆ›å»ºé¥æ§å™¨
 	Iterator *remoteControl = tv->createIterator();
 
-	// Ë³Ğò±éÀú
-	printf("Ë³Ğò±éÀú:\n");
+	// é¡ºåºéå†
+	printf("é¡ºåºéå†:\n");
 	remoteControl->first();
-	// ±éÀúµçÊÓËùÓĞÆµµÀ
+	// éå†ç”µè§†æ‰€æœ‰é¢‘é“
 	while (remoteControl->hasNext()){
 		remoteControl->currentChannel();
 		remoteControl->next();
@@ -20,10 +20,10 @@ int main()
 
 	printf("\n\n");
 
-	// ÄæĞò±éÀú
-	printf("ÄæĞò±éÀú:\n");
+	// é€†åºéå†
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:\n");
 	remoteControl->last();
-	// ±éÀúµçÊÓËùÓĞÆµµÀ
+	// éå†ç”µè§†æ‰€æœ‰é¢‘é“
 	while (remoteControl->hasPrevious()){
 		remoteControl->currentChannel();
 		remoteControl->previous();

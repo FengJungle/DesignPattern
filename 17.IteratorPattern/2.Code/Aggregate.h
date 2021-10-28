@@ -2,13 +2,14 @@
 #define __AGGREGATE_H__
 
 #include <vector>
+#include <string>
 using namespace std;
 
-// Ç°ÏòÉùÃ÷£¬ÒòÎªÁ½¸öÀà»¥ÏàÒıÓÃ
+// å‰å‘å£°æ˜ï¼Œå› ä¸ºä¸¤ä¸ªç±»äº’ç›¸å¼•ç”¨
 class Iterator;
 class RemoteControl;
 
-// ³éÏó¾ÛºÏÀà Aggregate
+// æŠ½è±¡èšåˆç±» Aggregate
 class Aggregate
 {
 public:
@@ -17,19 +18,19 @@ public:
 	virtual Iterator* createIterator() = 0;
 };
 
-// ¾ßÌå¾ÛºÏÀà Television
+// å…·ä½“èšåˆç±» Television
 class Television :public Aggregate
 {
 public:
 	Television();
-	Television(vector<string> iChannelList);
-	// ÊµÏÖ´´½¨µü´úÆ÷
+	Television(vector<std::string> iChannelList);
+	// å®ç°åˆ›å»ºè¿­ä»£å™¨
 	Iterator* createIterator();
-	// »ñÈ¡×ÜµÄÆµµÀÊıÄ¿
+	// è·å–æ€»çš„é¢‘é“æ•°ç›®
 	int getTotalChannelNum();
 	void play(int i);
 private:
-	vector<string> channelList;
+	vector<std::string> channelList;
 };
 
 #endif //__AGGREGATE_H__

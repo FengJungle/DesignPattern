@@ -5,20 +5,26 @@
 #define  random(x) (rand()%x)
 
 GameAccount::GameAccount(){
-	printf("创立游戏角色，积分：100，级别：PRIMARY\n");
+	level = nullptr;
+	printf("鍒涚珛娓告垙瑙掕壊锛岀Н鍒嗭細100锛岀骇鍒細PRIMARY\n");
 	score = 100;
 	name = "none";
 	setLevel(new Primary(this));
 }
 
 GameAccount::GameAccount(string iName){
-	printf("创立游戏角色，积分：100，级别：PRIMARY\n");
+	level = nullptr;
+	printf("鍒涚珛娓告垙瑙掕壊锛岀Н鍒嗭細100锛岀骇鍒細PRIMARY\n");
 	score = 100;
 	name = iName;
 	setLevel(new Primary(this));
 }
 
 void GameAccount::setLevel(Level* iLevel){
+	if(level != nullptr){
+		delete level;
+		level = nullptr;
+	}
 	this->level = iLevel;
 }
 
@@ -49,12 +55,12 @@ void GameAccount::win(){
 	else{
 		setScore(getScore() + 100);
 	}
-	printf("\n\t胜利，最新积分为 %d\n", score);
+	printf("\n\t鑳滃埄锛屾渶鏂扮Н鍒嗕负 %d\n", score);
 }
 
 void GameAccount::lose(){
 	setScore(getScore() + 30);
-	printf("\n\t输牌，最新积分为 %d\n", score);
+	printf("\n\t杈撶墝锛屾渶鏂扮Н鍒嗕负 %d\n", score);
 }
 
 int GameAccount::getScore(){

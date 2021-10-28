@@ -10,7 +10,7 @@ class ShoppingCart
 public:
 	ShoppingCart(){}
 	void addElement(Element* element){
-		printf("  ÉÌÆ·Ãû£º%s, \tÊýÁ¿£º%d, \t¼ÓÈë¹ºÎï³µ³É¹¦£¡\n", element->getName().c_str(), element->getNum());
+		printf("  å•†å“åï¼š%s, \tæ•°é‡ï¼š%d, \tåŠ å…¥è´­ç‰©è½¦æˆåŠŸï¼\n", element->getName().c_str(), element->getNum());
 		elementList.push_back(element);
 	}
 	void accept(Visitor* visitor){

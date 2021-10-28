@@ -5,7 +5,7 @@
 #include <string.h>
 using namespace std;
 
-//��Ʒ��House
+// 产品类House
 class House
 {
 public:
@@ -19,7 +19,7 @@ public:
 	void setRoof(string iRoof) {
 		this->roof = iRoof;
 	}
-	//��ӡHouse��Ϣ
+	// 打印House信息
 	void printfHouseInfo() {
 		printf("Floor:%s\t\n", this->floor.c_str());
 		printf("Wall:%s\t\n", this->wall.c_str());
@@ -31,7 +31,7 @@ private:
 	string roof;
 };
 
-//��������AbstractBall
+// 抽象建造者AbstractBall
 class AbstractBuilder
 {
 public:
@@ -46,7 +46,7 @@ public:
 			house = nullptr;
 		}
 	}
-	//���󷽷���
+	// 抽象方法：
 	virtual void buildFloor() = 0;
 	virtual void buildWall() = 0;
 	virtual void buildRoof() = 0;
@@ -55,7 +55,7 @@ public:
 	House *house;
 };
 
-//���彨����ConcreteBuilderA
+// 具体建造者ConcreteBuilderA
 class ConcreteBuilderA :public AbstractBuilder
 {
 public:
@@ -70,7 +70,7 @@ public:
 			house = nullptr;
 		}
 	}
-	//����ʵ�ַ���
+	// 具体实现方法
 	void buildFloor() {
 		this->house->setFloor("Floor_A");
 	}
@@ -85,7 +85,7 @@ public:
 	}
 };
 
-//���彨����ConcreteBuilderB
+// 具体建造者ConcreteBuilderB
 class ConcreteBuilderB :public AbstractBuilder
 {
 public:
@@ -100,7 +100,7 @@ public:
 			house = nullptr;
 		}
 	}
-	//����ʵ�ַ���
+	// 具体实现方法
 	void buildFloor() {
 		this->house->setFloor("Floor_B");
 	}
@@ -115,7 +115,7 @@ public:
 	}
 };
 
-//ָ����Director
+// 指挥者Director
 class Director
 {
 public:
@@ -128,10 +128,11 @@ public:
 			builder = nullptr;
 		}
 	}
-	//����ʵ�ַ���
+	// 具体实现方法
 	void setBuilder(AbstractBuilder *iBuilder) {
 		this->builder = iBuilder;
 	}
+	// 封装组装流程，返回建造结果
 	House *construct() {
 		builder->buildFloor();
 		builder->buildWall();

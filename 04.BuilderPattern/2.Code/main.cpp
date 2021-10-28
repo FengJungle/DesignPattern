@@ -2,21 +2,21 @@
 
 int main()
 {
-	//³éÏó½¨ÔìÕß
+	// æŠ½è±¡å»ºé€ è€…
 	AbstractBuilder *builder;
-	//Ö¸»ÓÕß
+	// æŒ‡æŒ¥è€…
 	Director *director = new Director();
-	//²úÆ·£ºHouse
+	// äº§å“ï¼šHouse
 	House *house;
 
-	//Ö¸¶¨¾ßÌå½¨ÔìÕßA
+	// æŒ‡å®šå…·ä½“å»ºé€ è€…A
 	builder = new ConcreteBuilderA();
 	director->setBuilder(builder);
 	house = director->construct();
 	house->printfHouseInfo();
 	delete builder;
 
-	//Ö¸¶¨¾ßÌå½¨ÔìÕßB
+	// æŒ‡å®šå…·ä½“å»ºé€ è€…A
 	builder = new ConcreteBuilderB();
 	director->setBuilder(builder);
 	house = director->construct();

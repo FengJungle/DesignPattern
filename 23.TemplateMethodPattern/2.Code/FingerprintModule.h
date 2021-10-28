@@ -3,96 +3,110 @@
 
 #include <stdio.h>
 
-// »ùÀà
+// åŸºç±»
 class FingerprintModule
 {
 public:
-	FingerprintModule(){}
-	virtual ~FingerprintModule(){}
-	void getImage(){
-		printf("²ÉÖ¸ÎÆÍ¼Ïñ\n");
+	FingerprintModule() {}
+	virtual ~FingerprintModule() {}
+	void getImage()
+	{
+		printf("é‡‡æŒ‡çº¹å›¾åƒ\n");
 	}
-	void output(){
-		printf("Ö¸ÎÆÍ¼Ïñ´¦ÀíÍê³É!\n\n");
+	void output()
+	{
+		printf("æŒ‡çº¹å›¾åƒå¤„ç†å®Œæˆ!\n");
 	}
 	virtual bool isSafeMode() = 0;
 	virtual void processImage() = 0;
-	// ¼Ó½âÃÜ
+	// åŠ è§£å¯†
 	virtual void encrypt() = 0;
 	virtual void decrypt() = 0;
 
-	// Ä£°å·½·¨
-	void algorithm(){
-		// 1.²ÉÍ¼
+	// æ¨¡æ¿æ–¹æ³•
+	void algorithm()
+	{
+		// 1.é‡‡å›¾
 		getImage();
-		// 2.°²È«Ä£Ê½ÏÂ¼ÓÃÜºÍ½âÃÜ
-		if (isSafeMode()){
-			// 2.1. ¼ÓÃÜ
+		// 2.å®‰å…¨æ¨¡å¼ä¸‹åŠ å¯†å’Œè§£å¯†
+		if (isSafeMode())
+		{
+			// 2.1. åŠ å¯†
 			encrypt();
-			// 2.2. ½âÃÜ
+			// 2.2. è§£å¯†
 			decrypt();
 		}
-		// 3.´¦ÀíImage
+		// 3.å¤„ç†Image
 		processImage();
-		// 4.´¦Àí½á¹û
+		// 4.å¤„ç†ç»“æœ
 		output();
 	}
 };
 
-// ÅÉÉúÀà
-class FingerprintModuleA :public FingerprintModule
+// æ´¾ç”Ÿç±»
+class FingerprintModuleA : public FingerprintModule
 {
 public:
-	FingerprintModuleA(){}
-	void processImage(){
-		printf("Ê¹ÓÃ µÚÒ»´ú°æ±¾Ëã·¨ ´¦ÀíÖ¸ÎÆÍ¼Ïñ\n");
+	FingerprintModuleA() {}
+	void processImage()
+	{
+		printf("ä½¿ç”¨ ç¬¬ä¸€ä»£ç‰ˆæœ¬ç®—æ³• å¤„ç†æŒ‡çº¹å›¾åƒ\n");
 	}
-	bool isSafeMode(){
-		printf("°²È«Ä£Ê½\n");
+	bool isSafeMode()
+	{
+		printf("å®‰å…¨æ¨¡å¼\n");
 		return true;
 	}
-	void encrypt(){
-		printf("Ê¹ÓÃRSAÃÜÔ¿¼ÓÃÜ\n");
+	void encrypt()
+	{
+		printf("ä½¿ç”¨RSAå¯†é’¥åŠ å¯†\n");
 	}
-	void decrypt(){
-		printf("Ê¹ÓÃRSAÃÜÔ¿½âÃÜ\n");
+	void decrypt()
+	{
+		printf("ä½¿ç”¨RSAå¯†é’¥è§£å¯†\n");
 	}
 };
 
-// ÅÉÉúÀà
-class FingerprintModuleB :public FingerprintModule
+// æ´¾ç”Ÿç±»
+class FingerprintModuleB : public FingerprintModule
 {
 public:
-	FingerprintModuleB(){}
-	void processImage(){
-		printf("Ê¹ÓÃ µÚ¶ş´ú°æ±¾Ëã·¨ ´¦ÀíÖ¸ÎÆÍ¼Ïñ\n");
+	FingerprintModuleB() {}
+	void processImage()
+	{
+		printf("ä½¿ç”¨ ç¬¬äºŒä»£ç‰ˆæœ¬ç®—æ³• å¤„ç†æŒ‡çº¹å›¾åƒ\n");
 	}
-	bool isSafeMode(){
-		printf("·Ç°²È«Ä£Ê½\n");
+	bool isSafeMode()
+	{
+		printf("éå®‰å…¨æ¨¡å¼\n");
 		return false;
 	}
-	void encrypt(){}
-	void decrypt(){}
+	void encrypt() {}
+	void decrypt() {}
 };
 
-// ÅÉÉúÀà
-class FingerprintModuleC :public FingerprintModule
+// æ´¾ç”Ÿç±»
+class FingerprintModuleC : public FingerprintModule
 {
 public:
-	FingerprintModuleC(){}
-	void processImage(){
-		printf("Ê¹ÓÃ µÚÒ»´ú°æ±¾Ëã·¨ ´¦ÀíÖ¸ÎÆÍ¼Ïñ\n");
+	FingerprintModuleC() {}
+	void processImage()
+	{
+		printf("ä½¿ç”¨ ç¬¬ä¸€ä»£ç‰ˆæœ¬ç®—æ³• å¤„ç†æŒ‡çº¹å›¾åƒ\n");
 	}
-	bool isSafeMode(){
-		printf("°²È«Ä£Ê½\n");
+	bool isSafeMode()
+	{
+		printf("å®‰å…¨æ¨¡å¼\n");
 		return true;
 	}
-	void encrypt(){
-		printf("Ê¹ÓÃDHÃÜÔ¿¼ÓÃÜ\n");
+	void encrypt()
+	{
+		printf("ä½¿ç”¨DHå¯†é’¥åŠ å¯†\n");
 	}
-	void decrypt(){
-		printf("Ê¹ÓÃDHÃÜÔ¿½âÃÜ\n");
+	void decrypt()
+	{
+		printf("ä½¿ç”¨DHå¯†é’¥è§£å¯†\n");
 	}
 };
 
-#endif  //__FINGERPRINTMODULE_H__
+#endif //__FINGERPRINTMODULE_H__

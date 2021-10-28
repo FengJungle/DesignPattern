@@ -4,23 +4,23 @@
 #include <iostream>
 using namespace std;
 
-// Ç°ÏòÉùÃ÷
+// å‰å‘å£°æ˜
 class Element;
 class Apple;
 class Book;
 
-// ³éÏó·ÃÎÊÕß
+// æŠ½è±¡è®¿é—®è€…
 class Visitor
 {
 public:
 	Visitor(){};
 	virtual ~Visitor(){}
-	// ÉùÃ÷Ò»×é·ÃÎÊ·½·¨
+	// å£°æ˜ä¸€ç»„è®¿é—®æ–¹æ³•
 	virtual void visit(Apple*) = 0;
 	virtual void visit(Book*) = 0;
 };
 
-// ¾ßÌå·ÃÎÊÕß£º¹Ë¿Í
+// å…·ä½“è®¿é—®è€…ï¼šé¡¾å®¢
 class Customer :public Visitor
 {
 public:
@@ -34,7 +34,7 @@ private:
 	string name;
 };
 
-// ¾ßÌå·ÃÎÊÕß£ºÊÕÒøÔ±
+// å…·ä½“è®¿é—®è€…ï¼šCashier
 class Cashier :public Visitor
 {
 public:

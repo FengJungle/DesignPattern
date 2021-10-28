@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-// ³éÏó²ßÂÔÀà
+// æŠ½è±¡ç­–ç•¥ç±»
 class Strategy
 {
 public:
@@ -12,12 +12,12 @@ public:
 	virtual void sort(int arr[], int N) = 0;
 };
 
-// ¾ßÌå²ßÂÔ£ºÃ°ÅİÅÅĞò
+// å…·ä½“ç­–ç•¥ï¼šå†’æ³¡æ’åº
 class BubbleSort :public Strategy
 {
 public:
 	BubbleSort(){
-		printf("Ã°ÅİÅÅĞò\n");
+		printf("å†’æ³¡æ’åº\n");
 	}
 	void sort(int arr[], int N){
 		for (int i = 0; i<N; i++)
@@ -34,12 +34,12 @@ public:
 	}
 };
 
-// ¾ßÌå²ßÂÔ£ºÑ¡ÔñÅÅĞò
+// å…·ä½“ç­–ç•¥ï¼šé€‰æ‹©æ’åº
 class SelectionSort :public Strategy
 {
 public:
 	SelectionSort(){
-		printf("Ñ¡ÔñÅÅĞò\n");
+		printf("é€‰æ‹©æ’åº\n");
 	}
 	void sort(int arr[], int N){
 		int i, j, k;
@@ -59,12 +59,12 @@ public:
 	}
 };
 
-// ¾ßÌå²ßÂÔ£º²åÈëÅÅĞò
+// å…·ä½“ç­–ç•¥ï¼šæ’å…¥æ’åº
 class InsertSort :public Strategy
 {
 public:
 	InsertSort(){
-		printf("²åÈëÅÅĞò\n");
+		printf("æ’å…¥æ’åº\n");
 	}
 	void sort(int arr[], int N){
 		int i, j;

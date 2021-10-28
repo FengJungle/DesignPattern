@@ -19,13 +19,13 @@ void Customer::setNum(Book* book, int iNum){
 
 void Customer::visit(Apple* apple){
 	int price = apple->getPrice();
-	printf("  %s \tµ¥¼Û: \t%d Ôª/kg\n", apple->getName().c_str(), apple->getPrice());
+	printf("  %s \tå•ä»·: \t%d å…ƒ/kg\n", apple->getName().c_str(), apple->getPrice());
 }
 
 void Customer::visit(Book* book){
 	int price = book->getPrice();
 	string name = book->getName();
-	printf("  ¡¶%s¡·\tµ¥¼Û: \t%d Ôª/±¾\n", book->getName().c_str(), book->getPrice());
+	printf("  ã€Š%sã€‹\tå•ä»·: \t%d å…ƒ/æœ¬\n", book->getName().c_str(), book->getPrice());
 }
 
 /*****        Cashier        *******/
@@ -38,7 +38,7 @@ void Cashier::visit(Apple* apple){
 	int price = apple->getPrice();
 	int num = apple->getNum();
 	int total = price*num;
-	printf("  %s ×Ü¼Û£º %d Ôª\n", name.c_str(), total);
+	printf("  %s æ€»ä»·ï¼š %d å…ƒ\n", name.c_str(), total);
 }
 
 void Cashier::visit(Book* book){
@@ -46,5 +46,5 @@ void Cashier::visit(Book* book){
 	string name = book->getName();
 	int num = book->getNum();
 	int total = price*num;
-	printf("  ¡¶%s¡· ×Ü¼Û£º %d Ôª\n", name.c_str(), total);
+	printf("  ã€Š%sã€‹ æ€»ä»·ï¼š %d å…ƒ\n", name.c_str(), total);
 }

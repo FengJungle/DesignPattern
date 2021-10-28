@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-// ³éÏóÏíÔªÀà
+// æŠ½è±¡äº«å…ƒç±»
 class NetDevice
 {
 public:
@@ -21,27 +21,27 @@ public:
 	}
 };
 
-// ¾ßÌåÏíÔªÀà:¼¯ÏßÆ÷
+// å…·ä½“äº«å…ƒç±»:é›†çº¿å™¨
 class Hub :public NetDevice
 {
 public:
 	Hub(){}
 	string getName(){
-		return "¼¯ÏßÆ÷";
+		return "é›†çº¿å™¨";
 	}
 };
 
-// ¾ßÌåÏíÔªÀà:½»»»»ú
+// å…·ä½“äº«å…ƒç±»:äº¤æ¢æœº
 class Switch :public NetDevice
 {
 public:
 	Switch(){}
 	string getName(){
-		return "½»»»»ú";
+		return "äº¤æ¢æœº";
 	}
 };
 
-// ÏíÔª¹¤³§Àà
+// äº«å…ƒå·¥å‚ç±»
 class NetDeviceFactory
 {
 public:
@@ -58,7 +58,7 @@ public:
 		return NULL;
 	}
 
-	// µ¥ÀıÄ£Ê½£º·µ»ØÏíÔª¹¤³§ÀàµÄÎ¨Ò»ÊµÀı
+	// å•ä¾‹æ¨¡å¼ï¼šè¿”å›äº«å…ƒå·¥å‚ç±»çš„å”¯ä¸€å®ä¾‹
 	static NetDeviceFactory* getFactory(){
 		if (instance == NULL){
 			m_mutex.lock();
@@ -80,7 +80,7 @@ private:
 	static NetDeviceFactory* instance;
 	static std::mutex m_mutex;
 
-	// ¹²Ïí³Ø£ºÓÃÒ»¸övectorÀ´±íÊ¾
+	// å…±äº«æ± ï¼šç”¨ä¸€ä¸ªvectoræ¥è¡¨ç¤º
 	vector<NetDevice*> devicePool;
 };
 

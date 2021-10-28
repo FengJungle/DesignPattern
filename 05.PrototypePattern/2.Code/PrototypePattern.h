@@ -5,7 +5,7 @@
 #include <string.h>
 using namespace std;
 
-//work modelÀà
+// work modelç±»
 class WorkModel
 {
 public:
@@ -15,7 +15,7 @@ public:
 	}
 };
 
-//³éÏóÔ­ÐÍÀàPrototypeWork
+// æŠ½è±¡åŽŸåž‹ç±»PrototypeWork
 class PrototypeWork
 {
 public:
@@ -27,7 +27,7 @@ private:
 	
 };
 
-//¾ßÌåÔ­ÐÍÀàConcreteWork
+// æŠ½è±¡åŽŸåž‹ç±»PrototypeWork
 class ConcreteWork :public PrototypeWork
 {
 public:
@@ -56,7 +56,7 @@ public:
 	void setModel(WorkModel *iWorkModel){
 		this->workModel = iWorkModel;
 	}
-	//´òÓ¡workÐÅÏ¢
+	// æ‰“å°workä¿¡æ¯
 	void printWorkInfo(){
 		printf("name:%s\t\n", this->name);
 		printf("idNum:%d\t\n", this->idNum);

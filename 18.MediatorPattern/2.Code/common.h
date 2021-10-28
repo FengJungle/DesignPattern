@@ -1,7 +1,7 @@
 #ifndef __COMMON_H__
 #define __COMMON_H__
 
-// ¹«¹²Í·ÎÄ¼þ
+// å…¬å…±å¤´æ–‡ä»¶
 
 #include <vector>
 using namespace std;

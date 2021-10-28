@@ -4,11 +4,11 @@
 #include "common.h"
 using namespace std;
 
-// Ç°ÏòÉùÃ÷
+// å‰å‘å£°æ˜
 class Mediator;
 class Agency;
 
-// ³éÏóÍ¬ÊÂÀà
+// æŠ½è±¡åŒäº‹ç±»
 class Colleague
 {
 public:
@@ -33,7 +33,7 @@ private:
 	Mediator* mediator;
 };
 
-// ¾ßÌåÍ¬ÊÂÀà£º·¿¶«
+// å…·ä½“åŒäº‹ç±»ï¼šæˆ¿ä¸œ
 class Landlord :public Colleague
 {
 public:
@@ -48,7 +48,7 @@ private:
 	string phoneNumber;
 };
 
-// ¾ßÌåÍ¬ÊÂÀà£º×â¿Í
+// å…·ä½“åŒäº‹ç±»ï¼šç§Ÿå®¢
 class Tenant :public Colleague
 {
 public:

@@ -7,17 +7,17 @@
 #include <string.h>
 using namespace std;
 
-// ³éÏó±í´ïÊ½Àà
+// æŠ½è±¡è¡¨è¾¾å¼ç±»
 class AbstractNode
 {
 public:
 	AbstractNode(){}
 	virtual ~AbstractNode(){}
-	// ÉùÃ÷³éÏó½Ó¿Ú
+	// å£°æ˜æŠ½è±¡æ¥å£
 	virtual char interpret() = 0;
 };
 
-// ÖÕ½á·û±í´ïÊ½£ºValueNode
+// ç»ˆç»“ç¬¦è¡¨è¾¾å¼ï¼šValueNode
 class ValueNode :public AbstractNode
 {
 public :
@@ -25,7 +25,7 @@ public :
 	ValueNode(int iValue){
 		this->value = iValue;
 	}
-	// ÊµÏÖ½âÊÍ²Ù×÷
+	// å®ç°è§£é‡Šæ“ä½œ
 	char interpret(){
 		return value;
 	}
@@ -33,7 +33,7 @@ private:
 	int value;
 };
 
-// ÖÕ½á·û±í´ïÊ½£ºOperationNode
+// ç»ˆç»“ç¬¦è¡¨è¾¾å¼ï¼šOperationNode
 class OperatorNode :public AbstractNode
 {
 public:
@@ -41,7 +41,7 @@ public:
 	OperatorNode(string iOp){
 		this->op = iOp;
 	}
-	// ÊµÏÖ½âÊÍ²Ù×÷
+	// å®ç°è§£é‡Šæ“ä½œ
 	char interpret(){
 		if (op == "and"){
 			return '&';
@@ -55,7 +55,7 @@ private:
 	string op;
 };
 
-// ·ÇÖÕ½á·û±í´ïÊ½£ºSentenceNode
+// éç»ˆç»“ç¬¦è¡¨è¾¾å¼ï¼šSentenceNode
 class SentenceNode :public AbstractNode
 {
 public:
@@ -81,7 +81,7 @@ private:
 	AbstractNode *operatorNode;
 };
 
-// ´¦ÀíÕß
+// å¤„ç†è€…
 class Handler
 {
 public:

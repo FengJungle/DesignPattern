@@ -4,19 +4,19 @@
 #include "common.h"
 #include "Colleague.h"
 
-// ³éÏóÖĞ½éÕß
+// æŠ½è±¡ä¸­ä»‹è€…
 class Mediator
 {
 public:
 	Mediator(){}
 	virtual ~Mediator(){}
-	// ÉùÃ÷³éÏó·½·¨
+	// å£°æ˜æŠ½è±¡æ–¹æ³•
 	virtual void operation(Colleague*) = 0;
-	// ÉùÃ÷×¢²á·½·¨
+	// å£°æ˜æ³¨å†Œæ–¹æ³•
 	virtual void registerMethod(Colleague*) = 0;
 };
 
-// ¾ßÌåÖĞ½éÕß
+// å…·ä½“ä¸­ä»‹è€…
 class Agency:public Mediator
 {
 public:

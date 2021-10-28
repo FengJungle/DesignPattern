@@ -4,47 +4,47 @@ int main()
 {
 #if 0
 	ConcreteWork *singleWork = new ConcreteWork("Single",1001,"Single_Model");
-	printf("\nSingleµÄ×÷Òµ£º\n");
+	printf("\nSingleçš„ä½œä¸šï¼š\n");
 	singleWork->printWorkInfo();
 	
-	printf("\njungleÖ±½Ó³­×÷Òµ¡­¡­\n");
+	printf("\njungleç›´æŽ¥æŠ„ä½œä¸šâ€¦â€¦\n");
 	ConcreteWork *jungleWork = singleWork;
-	printf("\nJungleµÄ×÷Òµ£º\n");
+	printf("\nJungleçš„ä½œä¸šï¼š\n");
 	jungleWork->printWorkInfo();
 
-	//³­Íê¸ÄÃû×ÖºÍÑ§ºÅ£¬·ñÔò»á±»ÀÏÊ¦²é³öÀ´
-	printf("\njungle³­Íê¸ÄÃû×ÖºÍÑ§ºÅ£¬·ñÔò»á±»ÀÏÊ¦²é³öÀ´¡­¡­\n");
+	// æŠ„å®Œæ”¹åå­—å’Œå­¦å·ï¼Œå¦åˆ™ä¼šè¢«è€å¸ˆæŸ¥å‡ºæ¥
+	printf("\njungleæŠ„å®Œæ”¹åå­—å’Œå­¦å·ï¼Œå¦åˆ™ä¼šè¢«è€å¸ˆæŸ¥å‡ºæ¥â€¦â€¦\n");
 	jungleWork->setName("jungle");
 	jungleWork->setIdNum(1002);
 	WorkModel *jungleModel = new WorkModel();
 	jungleModel->setWorkModelName("Jungle_Model");
 	jungleWork->setModel(jungleModel);
 	
-	//¼ì²éÏÂÊÇ·ñ¸Ä¶ÔÁË
-	printf("\nSingleµÄ×÷Òµ£º\n");
+	// æ£€æŸ¥ä¸‹æ˜¯å¦æ”¹å¯¹äº†
+	printf("\nSingleçš„ä½œä¸šï¼š\n");
 	singleWork->printWorkInfo();
-	printf("\nJungleµÄ×÷Òµ£º\n");
+	printf("\nJungleçš„ä½œä¸šï¼š\n");
 	jungleWork->printWorkInfo();
 #endif 
 
 	ConcreteWork *singleWork = new ConcreteWork("Single", 1001, "Single_Model");
-	printf("\nSingleµÄ×÷Òµ£º\n");
+	printf("\nSingleçš„ä½œä¸šï¼š\n");
 
 	ConcreteWork *jungleWork = singleWork->clone();
-	printf("\nJungleµÄ×÷Òµ£º\n");
+	printf("\njungleç›´æŽ¥æŠ„ä½œä¸šâ€¦â€¦\n");
 
-	//³­Íê¸ÄÃû×ÖºÍÑ§ºÅ£¬·ñÔò»á±»ÀÏÊ¦²é³öÀ´
-	printf("\njungle³­Íê¸ÄÃû×ÖºÍÑ§ºÅ£¬·ñÔò»á±»ÀÏÊ¦²é³öÀ´¡­¡­\n");
+	// æŠ„å®Œæ”¹åå­—å’Œå­¦å·ï¼Œå¦åˆ™ä¼šè¢«è€å¸ˆæŸ¥å‡ºæ¥
+	printf("\njungleæŠ„å®Œæ”¹åå­—å’Œå­¦å·ï¼Œå¦åˆ™ä¼šè¢«è€å¸ˆæŸ¥å‡ºæ¥â€¦â€¦\n");
 	jungleWork->setName("jungle");
 	jungleWork->setIdNum(1002);
 	WorkModel *jungleModel = new WorkModel();
 	jungleModel->setWorkModelName("Jungle_Model");
 	jungleWork->setModel(jungleModel);
 
-	//¼ì²éÏÂÊÇ·ñ¸Ä¶ÔÁË
-	printf("\nSingleµÄ×÷Òµ£º\n");
+	// æ£€æŸ¥ä¸‹æ˜¯å¦æ”¹å¯¹äº†
+	printf("\nSingleçš„ä½œä¸šï¼š\n");
 	singleWork->printWorkInfo();
-	printf("\nJungleµÄ×÷Òµ£º\n");
+	printf("\nJungleçš„ä½œä¸šï¼š\n");
 	jungleWork->printWorkInfo();
 
 	system("pause");

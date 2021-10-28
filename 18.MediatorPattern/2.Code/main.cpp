@@ -4,27 +4,27 @@
 
 int main()
 {
-	// ´´½¨×â·¿ÖÐ½é
+	// åˆ›å»ºç§Ÿæˆ¿ä¸­ä»‹
 	Agency *mediator = new Agency();
 
-	// ´´½¨3Î»·¿¶«
-	Landlord *fangdong1 = new Landlord("Áõ±¸", 1350, "³É¶¼ÊÐË«Á÷Çø", "1351025");
-	Landlord *fangdong2 = new Landlord("¹ØÓð", 1500, "³É¶¼ÊÐÎäºîÇø", "1378390");
-	Landlord *fangdong3 = new Landlord("ÕÅ·É", 1000, "³É¶¼ÊÐÁúÈªæä", "1881166");
+	// åˆ›å»º3ä½æˆ¿ä¸œ
+	Landlord *fangdong1 = new Landlord("åˆ˜å¤‡", 1350, "æˆéƒ½å¸‚åŒæµåŒº", "1351025");
+	Landlord *fangdong2 = new Landlord("å…³ç¾½", 1500, "æˆéƒ½å¸‚æ­¦ä¾¯åŒº", "1378390");
+	Landlord *fangdong3 = new Landlord("å¼ é£ž", 1000, "æˆéƒ½å¸‚é¾™æ³‰é©¿", "1881166");
 	fangdong1->setMediator(mediator);
 	fangdong2->setMediator(mediator);
 	fangdong3->setMediator(mediator);
-	// ·¿¶«ÔÚÖÐ½é´¦µÇ¼Ç×¢²á·¿Ô´ÐÅÏ¢
+	// æˆ¿ä¸œåœ¨ä¸­ä»‹å¤„ç™»è®°æ³¨å†Œæˆ¿æºä¿¡æ¯
 	mediator->registerMethod(fangdong1);
 	mediator->registerMethod(fangdong2);
 	mediator->registerMethod(fangdong3);
 
-	// ´´½¨Á½Î»×â¿ÍJungleºÍ¼úÃÈÍÃ
+	// åˆ›å»ºä¸¤ä½ç§Ÿå®¢Jungleå’Œè´±èŒå…”
 	Tenant *jungle = new Tenant("Jungle");
-	Tenant *jianmengtu = new Tenant("¼úÃÈÍÃ");
+	Tenant *jianmengtu = new Tenant("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 	jungle->setMediator(mediator);
 	jianmengtu->setMediator(mediator);
-	// JungleºÍ¼úÃÈÍÃÔÚÖÐ½é´¦µÇ¼ÇÇó×âÐÅÏ¢
+	// Jungleå’Œè´±èŒå…”åœ¨ä¸­ä»‹å¤„ç™»è®°æ±‚ç§Ÿä¿¡æ¯
 	mediator->registerMethod(jungle);
 	mediator->registerMethod(jianmengtu);
 

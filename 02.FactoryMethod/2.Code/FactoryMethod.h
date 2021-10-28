@@ -5,7 +5,7 @@
 #include <string.h>
 using namespace std;
 
-//³éÏó²úÆ·ÀàAbstractProduct
+// æŠ½è±¡äº§å“ç±»AbstractProduct
 class AbstractSportProduct
 {
 public:
@@ -13,12 +13,12 @@ public:
 
 	}
 	virtual ~AbstractSportProduct(){}
-	//³éÏó·½·¨£º
+	// æŠ½è±¡æ–¹æ³•ï¼š
 	virtual void printName(){};
 	virtual void play(){};
 };
 
-//¾ßÌå²úÆ·ÀàBasketball
+// å…·ä½“äº§å“ç±»Basketball
 class Basketball :public AbstractSportProduct
 {
 public:
@@ -26,7 +26,7 @@ public:
 		printName();
 		play();
 	}
-	//¾ßÌåÊµÏÖ·½·¨
+	// å…·ä½“å®ç°æ–¹æ³•
 	void printName(){
 		printf("Jungle get Basketball\n");
 	}
@@ -35,7 +35,7 @@ public:
 	}
 };
 
-//¾ßÌå²úÆ·ÀàFootball
+// å…·ä½“äº§å“ç±»Football
 class Football :public AbstractSportProduct
 {
 public:
@@ -43,7 +43,7 @@ public:
 		printName();
 		play();
 	}
-	//¾ßÌåÊµÏÖ·½·¨
+	// å…·ä½“å®ç°æ–¹æ³•
 	void printName(){
 		printf("Jungle get Football\n");
 	}
@@ -52,7 +52,7 @@ public:
 	}
 };
 
-//¾ßÌå²úÆ·ÀàVolleyball
+// å…·ä½“äº§å“ç±»Volleyball
 class Volleyball :public AbstractSportProduct
 {
 public:
@@ -60,7 +60,7 @@ public:
 		printName();
 		play();
 	}
-	//¾ßÌåÊµÏÖ·½·¨
+	// å…·ä½“å®ç°æ–¹æ³•
 	void printName(){
 		printf("Jungle get Volleyball\n");
 	}
@@ -69,7 +69,7 @@ public:
 	}
 };
 
-//³éÏó¹¤³§Àà
+// æŠ½è±¡å·¥å‚ç±»
 class AbstractFactory
 {
 public:
@@ -77,7 +77,7 @@ public:
 	virtual AbstractSportProduct *getSportProduct() = 0;
 };
 
-//¾ßÌå¹¤³§ÀàBasketballFactory
+// å…·ä½“å·¥å‚ç±»BasketballFactory
 class BasketballFactory :public AbstractFactory
 {
 public:
@@ -90,7 +90,7 @@ public:
 	}
 };
 
-//¾ßÌå¹¤³§ÀàFootballFactory
+// å…·ä½“å·¥å‚ç±»FootballFactory
 class FootballFactory :public AbstractFactory
 {
 public:
@@ -102,7 +102,7 @@ public:
 	}
 };
 
-//¾ßÌå¹¤³§ÀàVolleyballFactory
+// å…·ä½“å·¥å‚ç±»VolleyballFactory
 class VolleyballFactory :public AbstractFactory
 {
 public:

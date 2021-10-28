@@ -17,5 +17,5 @@ int Television::getTotalChannelNum(){
 }
 
 void Television::play(int i){
-	printf("���ڲ��ţ�%s����\n", channelList[i].c_str());
+	printf("现在播放：%s……\n", channelList[i].c_str());
 }

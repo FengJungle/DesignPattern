@@ -5,81 +5,89 @@
 #include <string.h>
 using namespace std;
 
-//³éÏó²úÆ·ÀàAbstractBall
+// æŠ½è±¡äº§å“ç±»AbstractBall
 class AbstractBall
 {
 public:
-	AbstractBall(){
-
+	AbstractBall()
+	{
 	}
-	virtual ~AbstractBall(){}
-	//³éÏó·½·¨£º
+	virtual ~AbstractBall() {}
+	// æŠ½è±¡æ–¹æ³•ï¼š
 	virtual void play(){};
 };
 
-//¾ßÌå²úÆ·ÀàBasketball
-class Basketball :public AbstractBall
+// å…·ä½“äº§å“ç±»Basketball
+class Basketball : public AbstractBall
 {
 public:
-	Basketball(){
+	Basketball()
+	{
 		play();
 	}
-	//¾ßÌåÊµÏÖ·½·¨
-	void play(){
+	// å…·ä½“å®ç°æ–¹æ³•
+	void play()
+	{
 		printf("Jungle play Basketball\n\n");
 	}
 };
 
-//¾ßÌå²úÆ·ÀàFootball
-class Football :public AbstractBall
+// å…·ä½“äº§å“ç±»Football
+class Football : public AbstractBall
 {
 public:
-	Football(){
+	Football()
+	{
 		play();
 	}
-	//¾ßÌåÊµÏÖ·½·¨
-	void play(){
+	// å…·ä½“å®ç°æ–¹æ³•
+	void play()
+	{
 		printf("Jungle play Football\n\n");
 	}
 };
 
-//³éÏó²úÆ·ÀàAbstractShirt
+// æŠ½è±¡äº§å“ç±»AbstractShirt
 class AbstractShirt
 {
 public:
-	AbstractShirt(){}
-	virtual ~AbstractShirt(){}
-	//³éÏó·½·¨£º
+	AbstractShirt() {}
+	virtual ~AbstractShirt() {}
+	// æŠ½è±¡æ–¹æ³•ï¼š
 	virtual void wearShirt(){};
 };
 
-//¾ßÌå²úÆ·ÀàBasketballShirt
-class BasketballShirt :public AbstractShirt
+// å…·ä½“äº§å“ç±»BasketballShirt
+class BasketballShirt : public AbstractShirt
 {
 public:
-	BasketballShirt(){
+	BasketballShirt()
+	{
 		wearShirt();
 	}
-	//¾ßÌåÊµÏÖ·½·¨
-	void wearShirt(){
+	// å…·ä½“å®ç°æ–¹æ³•
+	void wearShirt()
+	{
 		printf("Jungle wear Basketball Shirt\n\n");
 	}
 };
 
-//¾ßÌå²úÆ·ÀàFootballShirt
-class FootballShirt :public AbstractShirt
+// å…·ä½“äº§å“ç±»FootballShirt
+class FootballShirt : public AbstractShirt
 {
 public:
-	FootballShirt(){
+	FootballShirt()
+	{
 		wearShirt();
 	}
-	//¾ßÌåÊµÏÖ·½·¨
-	void wearShirt(){
+	// å…·ä½“å®ç°æ–¹æ³•
+	void wearShirt()
+	{
 		printf("Jungle wear Football Shirt\n\n");
 	}
 };
 
-//³éÏó¹¤³§Àà
+// æŠ½è±¡å·¥å‚ç±»
 class AbstractFactory
 {
 public:
@@ -88,35 +96,41 @@ public:
 	virtual AbstractShirt *getShirt() = 0;
 };
 
-//¾ßÌå¹¤³§ÀàBasketballFactory
-class BasketballFactory :public AbstractFactory
+// å…·ä½“å·¥å‚ç±»BasketballFactory
+class BasketballFactory : public AbstractFactory
 {
 public:
-	BasketballFactory(){
+	BasketballFactory()
+	{
 		printf("BasketballFactory\n");
 	}
-	AbstractBall *getBall(){
+	AbstractBall *getBall()
+	{
 		printf("Jungle get basketball\n");
 		return new Basketball();
 	}
-	AbstractShirt *getShirt(){
+	AbstractShirt *getShirt()
+	{
 		printf("Jungle get basketball shirt\n");
 		return new BasketballShirt();
 	}
 };
 
-//¾ßÌå¹¤³§ÀàBasketballFactory
-class FootballFactory :public AbstractFactory
+// å…·ä½“å·¥å‚ç±»BasketballFactory
+class FootballFactory : public AbstractFactory
 {
 public:
-	FootballFactory(){
+	FootballFactory()
+	{
 		printf("FootballFactory\n");
 	}
-	AbstractBall *getBall(){
+	AbstractBall *getBall()
+	{
 		printf("Jungle get football\n");
 		return new Football();
 	}
-	AbstractShirt *getShirt(){
+	AbstractShirt *getShirt()
+	{
 		printf("Jungle get football shirt\n");
 		return new FootballShirt();
 	}

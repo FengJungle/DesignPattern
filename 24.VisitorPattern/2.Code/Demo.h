@@ -1,61 +1,67 @@
 #ifndef __DEMO_H__
 #define __DEMO_H__
 
-// ³éÏó·ÃÎÊÕß Visitor
+// æŠ½è±¡è®¿é—®è€… Visitor
 class Visitor
 {
 public:
 	virtual ~Visitor() {}
-	virtual void visit(ConcreteElementA*) = 0;
-	virtual void visit(ConcreteElementB*) = 0;
+	virtual void visit(ConcreteElementA *) = 0;
+	virtual void visit(ConcreteElementB *) = 0;
 };
 
-// ¾ßÌå·ÃÎÊÕß ConcreteVisitor
-class ConcreteVisitor :public Visitor
+// å…·ä½“è®¿é—®è€… ConcreteVisitor
+class ConcreteVisitor : public Visitor
 {
 public:
-	// ÊµÏÖÒ»ÖÖÕë¶ÔÌØ¶¨ÔªËØµÄ·ÃÎÊ²Ù×÷
-	void visit(ConcreteElementA*){
-		// ÔªËØAµÄ·ÃÎÊ²Ù×÷´úÂë
+	// å®žçŽ°ä¸€ç§é’ˆå¯¹ç‰¹å®šå…ƒç´ çš„è®¿é—®æ“ä½œ
+	void visit(ConcreteElementA *)
+	{
+		// å…ƒç´ Açš„è®¿é—®æ“ä½œä»£ç 
 	}
-	void visit(ConcreteElementB*){
-		// ÔªËØBµÄ·ÃÎÊ²Ù×÷´úÂë
+	void visit(ConcreteElementB *)
+	{
+		// å…ƒç´ Açš„è®¿é—®æ“ä½œä»£ç 
 	}
 };
 
-// ³éÏóÔªËØ
+// æŠ½è±¡å…ƒç´ 
 class Element
 {
 public:
 	virtual ~Element() {}
-	// ÉùÃ÷³éÏó·½·¨£¬ÒÔÒ»¸ö³éÏó·ÃÎÊÕßµÄÖ¸Õë×÷Îªº¯Êý²ÎÊý
-	virtual void accept(Visitor*) = 0;
+	// å£°æ˜ŽæŠ½è±¡æ–¹æ³•ï¼Œä»¥ä¸€ä¸ªæŠ½è±¡è®¿é—®è€…çš„æŒ‡é’ˆä½œä¸ºå‡½æ•°å‚æ•°
+	virtual void accept(Visitor *) = 0;
 };
 
-// ¾ßÌåÔªËØ
-class ConcreteElement :public Element
+// å…·ä½“å…ƒç´ 
+class ConcreteElement : public Element
 {
 public:
-	void accept(Visitor* visitor){
+	void accept(Visitor *visitor)
+	{
 		visitor->visit(this);
 	}
 };
 
-// ¶ÔÏó½á¹¹
+// å¯¹è±¡ç»“æž„
 class ObjectStructure
 {
 public:
-	//  Ìá¹©½Ó¿Ú½ÓÊÜ·ÃÎÊÕß·ÃÎÊ
-	void accept(Visitor* visitor){
-		// ±éÀú·ÃÎÊ¶ÔÏó½á¹¹ÖÐµÄÔªËØ
-		for (){
+	//  æä¾›æŽ¥å£æŽ¥å—è®¿é—®è€…è®¿é—®
+	void accept(Visitor *visitor)
+	{
+		// éåŽ†è®¿é—®å¯¹è±¡ç»“æž„ä¸­çš„å…ƒç´ 
+		for ()
+		{
 			elementList[i]->accept(visitor);
 		}
 	}
-	void addElement(){}
-	void removeElement(){}
+	void addElement() {}
+	void removeElement() {}
+
 private:
-	lsit<Element*>elementList;
+	list<Element *> elementList;
 };
 
 #endif

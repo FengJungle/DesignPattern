@@ -5,19 +5,19 @@
 
 int main()
 {
-	Apple *apple1 = new Apple("ºì¸»Ê¿Æ»¹û", 7);
-	Apple *apple2 = new Apple("»¨Å£Æ»¹û", 5);
-	Book *book1 = new Book("ºìÂ¥ÃÎ", 129);
-	Book *book2 = new Book("ÖÕ½áÕß", 49);
+	Apple *apple1 = new Apple("çº¢å¯Œå£«è‹¹æžœ", 7);
+	Apple *apple2 = new Apple("èŠ±ç‰›è‹¹æžœ", 5);
+	Book *book1 = new Book("çº¢æ¥¼æ¢¦", 129);
+	Book *book2 = new Book("ç»ˆç»“è€…", 49);
 
-	Cashier* cashier = new Cashier();
-	Customer* jungle = new Customer("Jungle");
+	Cashier *cashier = new Cashier();
+	Customer *jungle = new Customer("Jungle");
 	jungle->setNum(apple1, 2);
 	jungle->setNum(apple2, 4);
 	jungle->setNum(book1, 1);
 	jungle->setNum(book2, 3);
 
-	ShoppingCart* shoppingCart = new ShoppingCart();
+	ShoppingCart *shoppingCart = new ShoppingCart();
 	shoppingCart->addElement(apple1);
 	shoppingCart->addElement(apple2);
 	shoppingCart->addElement(book1);

@@ -1,7 +1,7 @@
 #ifndef __DECORATOR_PATTERN_H__
 #define __DECORATOR_PATTERN_H__
 
-//³éÏó¹¹¼þ
+// æŠ½è±¡æž„ä»¶
 class Component
 {
 public:
@@ -10,17 +10,17 @@ public:
 	virtual void operation() = 0;
 };
 
-//¾ßÌå¹¹¼þÀà
+// å…·ä½“æž„ä»¶
 class Phone :public Component
 {
 public:
 	Phone(){}
 	void operation(){
-		printf("ÊÖ»ú\n");
+		printf("ï¿½Ö»ï¿½\n");
 	}
 };
 
-//³éÏó×°ÊÎÀà
+// æŠ½è±¡è£…é¥°ç±»
 class Decorator :public Component
 {
 public:
@@ -41,7 +41,7 @@ private:
 	Component *component;
 };
 
-//¾ßÌå×°ÊÎÀà£ºÊÖ»ú¿Ç
+// å…·ä½“è£…é¥°ç±»ï¼šæ‰‹æœºå£³
 class DecoratorShell:public Decorator
 {
 public:
@@ -54,11 +54,12 @@ public:
 		this->newBehavior();
 	}
 	void newBehavior(){
-		printf("×°ÊÖ»ú¿Ç\n");
+		printf("å®‰è£…æ‰‹æœºå£³\n");
 	}
 };
 
-//¾ßÌå×°ÊÎÀà£ºÊÖ»úÌùÖ½
+
+// å…·ä½“è£…é¥°ç±»ï¼šæ‰‹æœºè´´çº¸
 class DecoratorSticker :public Decorator
 {
 public:
@@ -71,11 +72,11 @@ public:
 		this->newBehavior();
 	}
 	void newBehavior(){
-		printf("Ìù¿¨Í¨ÌùÖ½\n");
+		printf("è´´å¡é€šè´´çº¸Ö½\n");
 	}
 };
 
-//¾ßÌå×°ÊÎÀà£ºÊÖ»ú¹ÒÉþ
+//  å…·ä½“è£…é¥°ç±»ï¼šæŒ‚ç»³
 class DecoratorRope :public Decorator
 {
 public:
@@ -88,7 +89,7 @@ public:
 		this->newBehavior();
 	}
 	void newBehavior(){
-		printf("ÏµÊÖ»ú¹ÒÉþ\n");
+		printf("ç³»æ‰‹æœºæŒ‚ç»³\n");
 	}
 };
 #endif //__DECORATOR_PATTERN_H__

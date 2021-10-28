@@ -4,7 +4,7 @@
 #include "Strategy.h"
 #include <stdio.h>
 
-// ÉÏÏÂÎÄÀà
+// ä¸Šä¸‹æ–‡ç±»
 class Context
 {
 public:
@@ -38,7 +38,7 @@ public:
 	}
 	void sort(){
 		this->sortStrategy->sort(arr, N);
-		printf("Êä³ö£º ");
+		printf("è¾“å‡ºï¼š ");
 		this->print();
 	}
 	void setInput(int iArr[], int iN){

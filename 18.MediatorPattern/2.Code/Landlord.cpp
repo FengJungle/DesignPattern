@@ -19,11 +19,11 @@ Landlord::Landlord(string iName, int iPrice,
 }
 
 void Landlord::answer(){
-	printf("·¿¶«ÐÕÃû£º%s, ·¿×â£º%d, µØÖ·£º%s, ÁªÏµµç»°£º%s\n",
+	printf("æˆ¿ä¸œå§“åï¼š%s, æˆ¿ç§Ÿï¼š%d, åœ°å€ï¼š%s, è”ç³»ç”µè¯ï¼š%s\n",
 		name.c_str(), price, address.c_str(), phoneNumber.c_str());
 }
 
 void Landlord::ask(){
-	printf("·¿¶«%s²é¿´×â¿ÍÐÅÏ¢£º\n",name.c_str());
+	printf("æˆ¿ä¸œ%sæŸ¥çœ‹ç§Ÿå®¢ä¿¡æ¯ï¼š\n",name.c_str());
 	(this->getMediator())->operation(this);
 }

@@ -8,13 +8,13 @@ class Level
 public :
 	Level();
 	virtual ~Level(){}
-	// 声明方法
+	// 澹版槑鏂规硶
 	void playCard();
 	void play();
 	virtual void doubleScore() = 0;
 	virtual void changeCards() = 0;
 	virtual void peekCards() = 0;
-	// 升级
+	// 鍗囩骇
 	virtual void upgradeLevel() = 0;
 	GameAccount* getGameAccount();
 	void setGameAccount(GameAccount* iGameAccount);
@@ -36,7 +36,7 @@ public:
 	void doubleScore();
 	void changeCards();
 	void peekCards();
-	// 升级
+	// 鍗囩骇
 	void upgradeLevel();
 };
 
@@ -48,7 +48,7 @@ public:
 	void doubleScore();
 	void changeCards();
 	void peekCards();
-	// 升级
+	// 鍗囩骇
 	void upgradeLevel();
 };
 
@@ -60,7 +60,7 @@ public:
 	void doubleScore();
 	void changeCards();
 	void peekCards();
-	// 升级
+	// 鍗囩骇
 	void upgradeLevel();
 };
 
@@ -72,7 +72,7 @@ public:
 	void doubleScore();
 	void changeCards();
 	void peekCards();
-	// 升级
+	// 鍗囩骇
 	void upgradeLevel();
 };
 

@@ -3,25 +3,25 @@
 
 int main()
 {
-	// ÇëÇó´¦ÀíÕß£º×é³¤£¬±ø¸ç£¬´º×Ü£¬ÀÏ°å
+	// è¯·æ±‚å¤„ç†è€…ï¼šç»„é•¿ï¼Œå…µå“¥ï¼Œæ˜¥æ€»ï¼Œè€æ¿
 	Approver *zuzhang, *bingge, *chunzong, *laoban;
 
-	zuzhang = new GroupLeader("Ëï´ó¸ç");
-	bingge = new Head("±ø¸ç");
-	chunzong = new Manager("´º×Ü");
-	laoban = new Boss("ÕÅÀÏ°å");
+	zuzhang = new GroupLeader("å­™å¤§å“¥");
+	bingge = new Head("å…µå“¥");
+	chunzong = new Manager("æ˜¥æ€»");
+	laoban = new Boss("å¼ è€æ¿");
 
 	zuzhang->setSuperior(bingge);
 	bingge->setSuperior(chunzong);
 	chunzong->setSuperior(laoban);
 
-	// ´´½¨±¨Ïúµ¥
+	// åˆ›å»ºæŠ¥é”€å•
 	Bill *bill1 = new Bill(1, "Jungle", 8); 
 	Bill *bill2 = new Bill(2, "Lucy", 14.4);
 	Bill *bill3 = new Bill(3, "Jack", 32.9);
 	Bill *bill4 = new Bill(4, "Tom", 89);
 
-	// È«²¿ÏÈ½»¸ø×é³¤ÉóÅú
+	// å…¨éƒ¨å…ˆäº¤ç»™ç»„é•¿å®¡æ‰¹
 	zuzhang->handleRequest(bill1); printf("\n");
 	zuzhang->handleRequest(bill2); printf("\n");
 	zuzhang->handleRequest(bill3); printf("\n");

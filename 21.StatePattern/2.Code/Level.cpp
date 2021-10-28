@@ -13,7 +13,7 @@ void Level::playCard(){
 }
 
 void Level::play(){
-	printf("\tÊ¹ÓÃ»ù±¾¼¼ÄÜ,");
+	printf("\tä½¿ç”¨åŸºæœ¬æŠ€èƒ½,");
 }
 
 void Level::setGameAccount(GameAccount* iGameAccount){
@@ -52,7 +52,7 @@ void Primary::peekCards(){
 void Primary::upgradeLevel(){
 	if (this->getGameAccount()->getScore() > 150){
 		this->getGameAccount()->setLevel(new Secondary(this));
-		printf("\tÉý¼¶£¡ ¼¶±ð£ºSECONDARY\n\n");
+		printf("\tå‡çº§ï¼ çº§åˆ«ï¼šSECONDARY\n\n");
 	}
 	else{
 		printf("\n");
@@ -70,7 +70,7 @@ Secondary::Secondary(Level* level){
 }
 
 void Secondary::doubleScore(){
-	printf("Ê¹ÓÃÊ¤ÀûË«±¶»ý·Ö¼¼ÄÜ");
+	printf("ä½¿ç”¨èƒœåˆ©åŒå€ç§¯åˆ†æŠ€èƒ½");
 }
 
 void Secondary::changeCards(){
@@ -84,11 +84,11 @@ void Secondary::peekCards(){
 void Secondary::upgradeLevel(){
 	if (this->getGameAccount()->getScore() < 150){
 		this->getGameAccount()->setLevel(new Primary(this));
-		printf("\t½µ¼¶£¡ ¼¶±ð£ºPRIMARY\n\n");
+		printf("\té™çº§ï¼ çº§åˆ«ï¼šPRIMARY\n\n");
 	}
 	else if (this->getGameAccount()->getScore() > 200){
 		this->getGameAccount()->setLevel(new Professional(this));
-		printf("\tÉý¼¶£¡ ¼¶±ð£ºPROFESSIONAL\n\n");
+		printf("\tå‡çº§ï¼ çº§åˆ«ï¼šPROFESSIONAL\n\n");
 	}
 }
 
@@ -103,11 +103,11 @@ Professional::Professional(Level* level){
 }
 
 void Professional::doubleScore(){
-	printf("Ê¹ÓÃÊ¤ÀûË«±¶»ý·Ö¼¼ÄÜ,");
+	printf("ä½¿ç”¨èƒœåˆ©åŒå€ç§¯åˆ†æŠ€èƒ½,");
 }
 
 void Professional::changeCards(){
-	printf("Ê¹ÓÃ»»ÅÆ¼¼ÄÜ");
+	printf("ä½¿ç”¨æ¢ç‰ŒæŠ€èƒ½");
 }
 
 void Professional::peekCards(){
@@ -117,11 +117,11 @@ void Professional::peekCards(){
 void Professional::upgradeLevel(){
 	if (this->getGameAccount()->getScore() < 200){
 		this->getGameAccount()->setLevel(new Secondary(this));
-		printf("\t½µ¼¶£¡ ¼¶±ð£ºSECONDARY\n\n");
+		printf("\té™çº§ï¼ çº§åˆ«ï¼šSECONDARY\n\n");
 	}
 	else if (this->getGameAccount()->getScore() > 250){
 		this->getGameAccount()->setLevel(new Final(this));
-		printf("\tÉý¼¶£¡ ¼¶±ð£ºFINAL\n\n");
+		printf("\tå‡çº§ï¼ çº§åˆ«ï¼šFINAL\n\n");
 	}
 }
 
@@ -136,23 +136,23 @@ Final::Final(Level* level){
 }
 
 void Final::doubleScore(){
-	printf("Ê¹ÓÃÊ¤ÀûË«±¶»ý·Ö¼¼ÄÜ,");
+	printf("ä½¿ç”¨èƒœåˆ©åŒå€ç§¯åˆ†æŠ€èƒ½,");
 }
 
 void Final::changeCards(){
-	printf("Ê¹ÓÃ»»ÅÆ¼¼ÄÜ,");
+	printf("ä½¿ç”¨æ¢ç‰ŒæŠ€èƒ½,");
 }
 
 void Final::peekCards(){
-	printf("Ê¹ÓÃÍµ¿´¿¨ÅÆ¼¼ÄÜ");
+	printf("ä½¿ç”¨å·çœ‹å¡ç‰ŒæŠ€èƒ½");
 }
 
 void Final::upgradeLevel(){
 	if (this->getGameAccount()->getScore() < 250){
 		this->getGameAccount()->setLevel(new Professional(this));
-		printf("\t½µ¼¶£¡ ¼¶±ð£ºPROFESSIONAL\n\n");
+		printf("\té™çº§ï¼ çº§åˆ«ï¼šPROFESSIONAL\n\n");
 	}
 	else{
-		printf("\t%s ÒÑ¾­ÊÇ×î¸ß¼¶\n\n", this->getGameAccount()->getName().c_str());
+		printf("\t%s å·²ç»æ˜¯æœ€é«˜çº§\n\n", this->getGameAccount()->getName().c_str());
 	}
 }

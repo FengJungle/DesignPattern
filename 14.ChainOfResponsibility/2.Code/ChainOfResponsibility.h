@@ -5,7 +5,7 @@
 #include <time.h>
 using namespace std;
 
-// ÇëÇó£ºÆ±¾Ý
+// è¯·æ±‚ï¼šç¥¨æ®
 class Bill
 {
 public:
@@ -28,7 +28,8 @@ private:
 	string name;
 	double account;
 };
-// ³éÏó´¦ÀíÕß
+
+// æŠ½è±¡å¤„ç†è€…
 class Approver
 {
 public:
@@ -37,11 +38,11 @@ public:
 		setName(iName);
 	}
 	virtual ~Approver(){}
-	// Ìí¼ÓÉÏ¼¶
+	// æ·»åŠ ä¸Šçº§
 	void setSuperior(Approver *iSuperior){
 		this->superior = iSuperior;
 	}
-	// ´¦ÀíÇëÇó
+	// å¤„ç†è¯·æ±‚
 	virtual void handleRequest(Bill*) = 0;
 	string getName(){
 		return name;
@@ -55,7 +56,7 @@ private:
 	string name;
 };
 
-// ¾ßÌå´¦ÀíÕß£º×é³¤
+// å…·ä½“å¤„ç†è€…ï¼šç»„é•¿
 class GroupLeader :public Approver
 {
 public:
@@ -63,20 +64,20 @@ public:
 	GroupLeader(string iName){
 		setName(iName);
 	}
-	// ´¦ÀíÇëÇó
+	// å¤„ç†è¯·æ±‚
 	void handleRequest(Bill *bill){
 		if (bill->getAccount() < 10){
-			printf("×é³¤ %s ´¦ÀíÁË¸ÃÆ±¾Ý£¬Æ±¾ÝÐÅÏ¢£º",this->getName().c_str());
+			printf("ç»„é•¿ %s å¤„ç†äº†è¯¥ç¥¨æ®ï¼Œç¥¨æ®ä¿¡æ¯ï¼š",this->getName().c_str());
 			bill->print();
 		}
 		else{
-			printf("×é³¤ÎÞÈ¨´¦Àí£¬×ª½»ÉÏ¼¶¡­¡­\n");
+			printf("ç»„é•¿æ— æƒå¤„ç†ï¼Œè½¬äº¤ä¸Šçº§â€¦â€¦\n");
 			this->superior->handleRequest(bill);
 		}
 	}
 };
 
-// ¾ßÌå´¦ÀíÕß£ºÖ÷¹Ü
+// å…·ä½“å¤„ç†è€…ï¼šä¸»ç®¡
 class Head :public Approver
 {
 public:
@@ -84,20 +85,20 @@ public:
 	Head(string iName){
 		setName(iName);
 	}
-	// ´¦ÀíÇëÇó
+	// å¤„ç†è¯·æ±‚
 	void handleRequest(Bill *bill){
 		if (bill->getAccount() >= 10 && bill->getAccount()<30){
-			printf("Ö÷¹Ü %s ´¦ÀíÁË¸ÃÆ±¾Ý£¬Æ±¾ÝÐÅÏ¢£º", this->getName().c_str());
+			printf("ä¸»ç®¡ %s å¤„ç†äº†è¯¥ç¥¨æ®ï¼Œç¥¨æ®ä¿¡æ¯ï¼š", this->getName().c_str());
 			bill->print();
 		}
 		else{
-			printf("Ö÷¹ÜÎÞÈ¨´¦Àí£¬×ª½»ÉÏ¼¶¡­¡­\n");
+			printf("ä¸»ç®¡æ— æƒå¤„ç†ï¼Œè½¬äº¤ä¸Šçº§â€¦â€¦\n");
 			this->superior->handleRequest(bill);
 		}
 	}
 };
 
-// ¾ßÌå´¦ÀíÕß£º¾­Àí
+// å…·ä½“å¤„ç†è€…ï¼šç»ç†
 class Manager :public Approver
 {
 public:
@@ -105,20 +106,20 @@ public:
 	Manager(string iName){
 		setName(iName);
 	}
-	// ´¦ÀíÇëÇó
+	// å¤„ç†è¯·æ±‚
 	void handleRequest(Bill *bill){
 		if (bill->getAccount() >= 30 && bill->getAccount()<60){
-			printf("¾­Àí %s ´¦ÀíÁË¸ÃÆ±¾Ý£¬Æ±¾ÝÐÅÏ¢£º", this->getName().c_str());
+			printf("ç»ç† %s å¤„ç†äº†è¯¥ç¥¨æ®ï¼Œç¥¨æ®ä¿¡æ¯ï¼š", this->getName().c_str());
 			bill->print();
 		}
 		else{
-			printf("¾­ÀíÎÞÈ¨´¦Àí£¬×ª½»ÉÏ¼¶¡­¡­\n");
+			printf("ç»ç†æ— æƒå¤„ç†ï¼Œè½¬äº¤ä¸Šçº§â€¦â€¦\n");
 			this->superior->handleRequest(bill);
 		}
 	}
 };
 
-// ¾ßÌå´¦ÀíÕß£ºÀÏ°å
+// å…·ä½“å¤„ç†è€…ï¼šè€æ¿
 class Boss :public Approver
 {
 public:
@@ -126,9 +127,9 @@ public:
 	Boss(string iName){
 		setName(iName);
 	}
-	// ´¦ÀíÇëÇó
+	// å¤„ç†è¯·æ±‚
 	void handleRequest(Bill *bill){
-		printf("ÀÏ°å %s ´¦ÀíÁË¸ÃÆ±¾Ý£¬Æ±¾ÝÐÅÏ¢£º", this->getName().c_str());
+		printf("è€æ¿ %s å¤„ç†äº†è¯¥ç¥¨æ®ï¼Œç¥¨æ®ä¿¡æ¯ï¼š", this->getName().c_str());
 		bill->print();
 	}
 };

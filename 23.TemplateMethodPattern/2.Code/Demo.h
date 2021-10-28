@@ -1,39 +1,39 @@
 #ifndef __DEMO_H__
 #define __DEMO_H__
 
-// ³éÏóÀà£¨»ùÀà£©
+// æŠ½è±¡ç±»ï¼ˆåŸºç±»ï¼‰
 class AbstractClass
 {
 public:
 	virtual ~AbstractClass(){}
-	// Ä£°å·½·¨£¬¶¨ÒåÒ»¸öËã·¨µÄ¿ò¼ÜÁ÷³Ì
+	// æ¨¡æ¿æ–¹æ³•ï¼Œå®šä¹‰ä¸€ä¸ªç®—æ³•çš„æ¡†æ¶æµç¨‹
 	void templateMethod(){
 		// do something
 		method1();
 		method2();
 		method3();
 	}
-	// »ù±¾·½·¨¡ª¡ª¹«¹²·½·¨
+	// åŸºæœ¬æ–¹æ³•â€”â€”å…¬å…±æ–¹æ³•
 	void mehtod1(){
 		// do something
 	}
-	// »ù±¾·½·¨2
+	// åŸºæœ¬æ–¹æ³•2
 	virtual void method2() = 0;
-	// »ù±¾·½·¨3¡ª¡ªÄ¬ÈÏÊµÏÖ
+	// åŸºæœ¬æ–¹æ³•3â€”â€”é»˜è®¤å®ç°
 	void mehtod3(){
 		// do something
 	}
 };
 
-// ¾ßÌåÀà£¨ÅÉÉúÀà)
+// å…·ä½“ç±»ï¼ˆæ´¾ç”Ÿç±»)
 class ConcreteClass :public AbstractClass
 {
 public:
-	// ÊµÏÖ»ù±¾·½·¨2
+	// å®ç°åŸºæœ¬æ–¹æ³•2
 	void method2(){
 		// do something
 	}
-	// ÖØ¶¨Òå»ù±¾·½·¨3£¬¸²¸Ç»ùÀàµÄ·½·¨3
+	// é‡å®šä¹‰åŸºæœ¬æ–¹æ³•3ï¼Œè¦†ç›–åŸºç±»çš„æ–¹æ³•3
 	void method3(){
 		// do something
 	}

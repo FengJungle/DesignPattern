@@ -4,10 +4,10 @@
 
 int main()
 {
-	printf("¹¤³§·½·¨Ä£Ê½\n");
+	printf("å·¥å‚æ–¹æ³•æ¨¡å¼\n");
 	
-	//¶¨Òå¹¤³§Àà¶ÔÏóºÍ²úÆ·Àà¶ÔÏó
-	
+	// å®šä¹‰å·¥å‚ç±»å¯¹è±¡å’Œäº§å“ç±»å¯¹è±¡
+
 	std::shared_ptr<AbstractFactory> fac = make_shared<BasketballFactory>();
 	std::shared_ptr<AbstractSportProduct> product = std::shared_ptr<AbstractSportProduct>(fac->getSportProduct());
 

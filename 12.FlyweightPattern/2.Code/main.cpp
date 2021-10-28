@@ -7,25 +7,25 @@ int main()
 
 	NetDevice *device1, *device2, *device3, *device4;
 
-	// ¿Í»§¶Ë2»ñÈ¡Ò»¸öhub
+	// å®¢æˆ·ç«¯1è·å–ä¸€ä¸ªhub
 	device1 = factory->getNetDevice('H');
 	device1->print(1);
-	// ¿Í»§¶Ë2»ñÈ¡Ò»¸öhub
+	// å®¢æˆ·ç«¯2è·å–ä¸€ä¸ªhub
 	device2 = factory->getNetDevice('H');
 	device2->print(2);
-	// ÅĞ¶ÏÁ½¸öhubÊÇ·ñÊÇÍ¬Ò»¸ö
-	printf("ÅĞ¶ÏÁ½¸öhubÊÇ·ñÊÇÍ¬Ò»¸ö:\n");
+	// åˆ¤æ–­ä¸¤ä¸ªhubæ˜¯å¦æ˜¯åŒä¸€ä¸ª
+	printf("åˆ¤æ–­ä¸¤ä¸ªhubæ˜¯å¦æ˜¯åŒä¸€ä¸ª:\n");
 	printf("device1:%p\ndevice2:%p\n", device1, device2);
 
 	printf("\n\n\n\n");
-	// ¿Í»§¶Ë3»ñÈ¡Ò»¸öswitch
+	// å®¢æˆ·ç«¯3è·å–ä¸€ä¸ªswitch
 	device3 = factory->getNetDevice('S');
 	device3->print(1);
-	// ¿Í»§¶Ë4»ñÈ¡Ò»¸öhub
+	// å®¢æˆ·ç«¯4è·å–ä¸€ä¸ªswitch
 	device4 = factory->getNetDevice('S');
 	device4->print(2);
-	// ÅĞ¶ÏÁ½¸öhubÊÇ·ñÊÇÍ¬Ò»¸ö
-	printf("ÅĞ¶ÏÁ½¸öswitchÊÇ·ñÊÇÍ¬Ò»¸ö:\n");
+	// åˆ¤æ–­ä¸¤ä¸ªswitchæ˜¯å¦æ˜¯åŒä¸€ä¸ª
+	printf("åˆ¤æ–­ä¸¤ä¸ªswitchæ˜¯å¦æ˜¯åŒä¸€ä¸ª:\n");
 	printf("device3:%p\ndevice4:%p\n", device3, device4);
 
 	printf("\n\n");

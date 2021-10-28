@@ -4,33 +4,34 @@
 #include "common.h"
 #include <vector>
 
-// Ç°ÏòÉùÃ÷
+// å‰å‘å£°æ˜
 class Observer;
 class Player;
 
-// ³éÏóÄ¿±ê£ºÁªÃËÖĞĞÄ
+// æŠ½è±¡ç›®æ ‡ï¼šè”ç›Ÿä¸­å¿ƒ
 class AllyCenter
 {
 public:
 	AllyCenter();
-	virtual ~AllyCenter(){}
-	// ÉùÃ÷Í¨Öª·½·¨
+	virtual ~AllyCenter() {}
+	// å£°æ˜é€šçŸ¥æ–¹æ³•
 	virtual void notify(INFO_TYPE infoType, std::string name) = 0;
-	// ¼ÓÈëÍæ¼Ò
-	void join(Observer* player);
-	// ÒÆ³ıÍæ¼Ò
-	void remove(Observer* player);
+	// åŠ å…¥ç©å®¶
+	void join(Observer *player);
+	// ç§»é™¤ç©å®¶
+	void remove(Observer *player);
+
 protected:
-	// Íæ¼ÒÁĞ±í
-	std::vector<Observer*>playerList;
+	// ç©å®¶åˆ—è¡¨
+	std::vector<Observer *> playerList;
 };
 
-// ¾ßÌåÄ¿±ê
-class AllyCenterController :public AllyCenter
+// å…·ä½“ç›®æ ‡
+class AllyCenterController : public AllyCenter
 {
 public:
 	AllyCenterController();
-	// ÊµÏÖÍ¨Öª·½·¨
+	// å®ç°é€šçŸ¥æ–¹æ³•
 	void notify(INFO_TYPE infoType, std::string name);
 };
 
