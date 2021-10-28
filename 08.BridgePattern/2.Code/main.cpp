@@ -6,14 +6,14 @@ int main()
 	Game *game;
 	Phone *phone;
 
-	//Jungle买了PhoneA品牌的手机，想玩游戏A
+	// Jungle涔颁簡PhoneA鍝佺墝鐨勬墜鏈猴紝鎯崇帺娓告垙A
 	phone = new PhoneA();
 	game = new GameA();
 	phone->setupGame(game);
 	phone->play();
 	printf("++++++++++++++++++++++++++++++++++\n");
 
-	//Jungle想在这个手机上玩游戏B
+	// Jungle鎯冲湪杩欎釜鎵嬫満涓婄帺娓告垙B
 	delete game;
 	game = new GameB();
 	phone->setupGame(game);

@@ -6,7 +6,7 @@
 #include <mutex>
 using namespace std;
 
-//实现类接口
+// 瀹炵幇绫绘帴鍙mplementor
 class Game
 {
 public:
@@ -16,47 +16,47 @@ public:
 private:
 };
 
-//具体实现类GameA
+// 鍏蜂綋瀹炵幇绫籊ameA
 class GameA:public Game
 {
 public:
 	GameA(){}
 	void play(){
-		printf("Jungle玩游戏A\n");
+		printf("Jungle锟斤拷锟斤拷戏A\n");
 	}
 };
 
-//具体实现类GameB
+// 鍏蜂綋瀹炵幇绫籊ameB
 class GameB :public Game
 {
 public:
 	GameB(){}
 	void play(){
-		printf("Jungle玩游戏B\n");
+		printf("Jungle锟斤拷锟斤拷戏B\n");
 	}
 };
 
-//抽象类Phone
+//鎶借薄绫籔hone
 class Phone
 {
 public:
 	Phone(){
 	}
 	virtual ~Phone(){}
-	//安装游戏
+	// Setup game
 	virtual void setupGame(Game *igame) = 0;
 	virtual void play() = 0;
 private:
 	Game *game;
 };
 
-//扩充抽象类PhoneA
+// 鎵╁厖鎶借薄绫籔honeA
 class PhoneA:public Phone 
 {
 public:
 	PhoneA(){
 	}
-	//安装游戏
+	// Setup game
 	void setupGame(Game *igame){
 		this->game = igame;
 	}
@@ -67,13 +67,13 @@ private:
 	Game *game;
 };
 
-//扩充抽象类PhoneB
+// 鎵╁厖鎶借薄绫籔honeB
 class PhoneB :public Phone
 {
 public:
 	PhoneB(){
 	}
-	//安装游戏
+	// Setup game
 	void setupGame(Game *igame){
 		this->game = igame;
 	}

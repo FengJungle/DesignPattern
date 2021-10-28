@@ -6,23 +6,23 @@ int main()
 	Component *head, *sichuanBranch, *cdBranch, *myBranch, *office1, *office2, *office3,
 		*office4, *office5, *office6, *office7, *office8;
 
-	head = new SubComponent("×Ü²¿");
-	sichuanBranch = new SubComponent("ËÄ´¨·Ö²¿");
-	office1 = new AdminOffice("ÐÐÕþ°ì¹«ÊÒ");
-	office2 = new DeanOffice("½ÌÎñ°ì¹«ÊÒ");
+	head = new SubComponent("æ€»éƒ¨");
+	sichuanBranch = new SubComponent("å››å·åˆ†éƒ¨");
+	office1 = new AdminOffice("è¡Œæ”¿åŠžå…¬å®¤");
+	office2 = new DeanOffice("æ•™åŠ¡åŠžå…¬å®¤");
 	
 
-	cdBranch = new SubComponent("³É¶¼·Ö²¿");
-	myBranch = new SubComponent("ÃàÑô·Ö²¿");
-	office3 = new AdminOffice("ÐÐÕþ°ì¹«ÊÒ");
-	office4 = new DeanOffice("½ÌÎñ°ì¹«ÊÒ");
+	cdBranch = new SubComponent("æˆéƒ½åˆ†éƒ¨");
+	myBranch = new SubComponent("ç»µé˜³åˆ†éƒ¨");
+	office3 = new AdminOffice("è¡Œæ”¿åŠžå…¬å®¤");
+	office4 = new DeanOffice("æ•™åŠ¡åŠžå…¬å®¤");
 	
 
-	office5 = new AdminOffice("ÐÐÕþ°ì¹«ÊÒ");
-	office6 = new DeanOffice("½ÌÎñ°ì¹«ÊÒ");
+	office5 = new AdminOffice("è¡Œæ”¿åŠžå…¬å®¤");
+	office6 = new DeanOffice("æ•™åŠ¡åŠžå…¬å®¤");
 	
-	office7 = new AdminOffice("ÐÐÕþ°ì¹«ÊÒ");
-	office8 = new DeanOffice("½ÌÎñ°ì¹«ÊÒ");
+	office7 = new AdminOffice("è¡Œæ”¿åŠžå…¬å®¤");
+	office8 = new DeanOffice("æ•™åŠ¡åŠžå…¬å®¤");
 	
 	cdBranch->add(office5);
 	cdBranch->add(office6);

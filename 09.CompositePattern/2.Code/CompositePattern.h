@@ -6,7 +6,7 @@
 #include <vector>
 using namespace std;
 
-//³éÏó¹¹¼ş
+// æŠ½è±¡æ„ä»¶
 class Component
 {
 public:
@@ -15,13 +15,13 @@ public:
 		this->name = iName;
 	}
 	virtual ~Component(){}
-	//Ôö¼ÓÒ»¸ö²¿ÃÅ»ò°ì¹«ÊÒ
+	// å¢åŠ ä¸€ä¸ªéƒ¨é—¨æˆ–åŠå…¬å®¤
 	virtual void add(Component*) = 0;
-	//³·ÏúÒ»¸ö²¿ÃÅ»ò°ì¹«ÊÒ
+	// æ’¤é”€ä¸€ä¸ªéƒ¨é—¨æˆ–åŠå…¬å®¤
 	virtual void remove(Component*) = 0;
 	//
 	virtual Component* getChild(int) = 0;
-	//¸÷²¿ÃÅ²Ù×÷
+	// å„éƒ¨é—¨æ“ä½œ
 	virtual void operation() = 0;
 	string getName(){
 		return name;
@@ -30,7 +30,7 @@ private:
 	string name;
 };
 
-//Ò¶×Ó¹¹¼ş£º°ì¹«ÊÒ
+// å¶å­æ„ä»¶ï¼šåŠå…¬å®¤
 class Office :public Component
 {
 public:
@@ -52,7 +52,7 @@ private:
 	string name;
 };
 
-//Ò¶×Ó¹¹¼ş£ºĞĞÕş°ì¹«ÊÒ
+// å¶å­æ„ä»¶ï¼šè¡Œæ”¿åŠå…¬å®¤
 class AdminOffice :public Office
 {
 public:
@@ -66,7 +66,7 @@ private:
 	string name;
 };
 
-//Ò¶×Ó¹¹¼ş£º½ÌÎñ°ì¹«ÊÒ
+// å¶å­æ„ä»¶ï¼šæ•™åŠ¡åŠå…¬å®¤
 class DeanOffice :public Office
 {
 public:
@@ -80,7 +80,7 @@ private:
 	string name;
 };
 
-//ÈİÆ÷¹¹¼şSubComponent
+// å®¹å™¨æ„ä»¶SubComponent
 class SubComponent :public Component
 {
 public:
@@ -110,7 +110,7 @@ public:
 private:
 	string name;
 
-	//¹¹¼şÁĞ±í
+	// æ„ä»¶åˆ—è¡¨
 	vector<Component*>componentList;
 };
 
