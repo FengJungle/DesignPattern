@@ -38,6 +38,8 @@ public:
 	AbstractBuilder() {
 		house = new House();
 	}
+	AbstractBuilder(const AbstractBuilder& o) = delete;
+	AbstractBuilder& operator=(const AbstractBuilder& o) = delete;
 	virtual ~AbstractBuilder()
 	{
 		if (house != nullptr)
@@ -62,6 +64,8 @@ public:
 	ConcreteBuilderA() {
 		printf("ConcreteBuilderA\n");
 	}
+	ConcreteBuilderA(const ConcreteBuilderA& o) = delete;
+	ConcreteBuilderA& operator=(const ConcreteBuilderA& o) = delete;
 	~ConcreteBuilderA()
 	{
 		if (this->house != nullptr)
@@ -92,7 +96,9 @@ public:
 	ConcreteBuilderB() {
 		printf("ConcreteBuilderB\n");
 	}
-	~ConcreteBuilderA()
+	ConcreteBuilderB(const ConcreteBuilderB&) = delete;
+	ConcreteBuilderB& operator=(const ConcreteBuilderB&) = delete;
+	~ConcreteBuilderB()
 	{
 		if (this->house != nullptr)
 		{
