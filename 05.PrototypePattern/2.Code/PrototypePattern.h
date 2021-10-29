@@ -46,6 +46,10 @@ public:
 		work->workModel = this->workModel;
 		return work;
 	}
+	~ConcreteWork(){
+		delete workModel;
+		workModel = nullptr;
+	}
 
 	void setName(char* iName){
 		this->name = iName;
