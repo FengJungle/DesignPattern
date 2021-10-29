@@ -47,6 +47,8 @@ public:
 		realSubject = new RealSubject();
 		log = new Log();
 	}
+	Proxy(const Proxy& o) = delete;
+	Proxy& operator=(const Proxy&) = delete;
 	~Proxy(){
 		delete realSubject;
 		delete log;

@@ -72,6 +72,8 @@ public:
 		printf("开关控制电灯\n");
 		lamp = new Lamp();
 	}
+	LampCommand(const LampCommand&) = delete;
+	LampCommand& operator=(const LampCommand&) = delete;
 	~LampCommand(){
 		delete lamp;
 		lamp = nullptr;
@@ -97,9 +99,11 @@ public:
 		printf("开关控制风扇\n");
 		fan = new Fan();
 	}
+	FanCommand(const FanCommand& a) = delete;
+	FanCommand& operator=(const FanCommand&) = delete;
 	~FanCommand(){
-		delete lamp;
-		lamp = nullptr;
+		delete fan;
+		fan = nullptr;
 	}
 	// 实现execute()
 	void execute(){

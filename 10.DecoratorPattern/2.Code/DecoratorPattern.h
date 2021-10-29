@@ -16,7 +16,7 @@ class Phone :public Component
 public:
 	Phone(){}
 	void operation(){
-		printf("�ֻ�\n");
+		printf("手机\n");
 	}
 };
 

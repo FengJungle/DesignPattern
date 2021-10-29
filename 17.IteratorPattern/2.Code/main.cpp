@@ -21,7 +21,7 @@ int main()
 	printf("\n\n");
 
 	// 逆序遍历
-	printf("�������:\n");
+	printf("逆序遍历:\n");
 	remoteControl->last();
 	// 遍历电视所有频道
 	while (remoteControl->hasPrevious()){

@@ -22,7 +22,7 @@ class GameA:public Game
 public:
 	GameA(){}
 	void play(){
-		printf("Jungle����ϷA\n");
+		printf("Jungle玩游戏A\n");
 	}
 };
 
@@ -32,7 +32,7 @@ class GameB :public Game
 public:
 	GameB(){}
 	void play(){
-		printf("Jungle����ϷB\n");
+		printf("Jungle玩游戏B\n");
 	}
 };
 
