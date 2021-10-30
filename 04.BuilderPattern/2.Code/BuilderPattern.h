@@ -134,6 +134,8 @@ public:
 			builder = nullptr;
 		}
 	}
+	Director(const Director&) = delete;
+	Director& operator=(const Director&) = delete;
 	// 具体实现方法
 	void setBuilder(AbstractBuilder *iBuilder) {
 		this->builder = iBuilder;

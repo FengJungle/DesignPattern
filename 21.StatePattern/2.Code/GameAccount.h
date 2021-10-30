@@ -11,6 +11,14 @@ class GameAccount
 public:
 	GameAccount();
 	GameAccount(string iName);
+	GameAccount(const GameAccount&) = delete;
+	GameAccount& operator=(const GameAccount&) = delete;
+	~GameAccount(){
+		if(level){
+			delete level;
+			level = nullptr;
+		}
+	}
 	string getName();
 	void win();
 	void lose();
