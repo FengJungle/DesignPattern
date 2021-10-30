@@ -6,7 +6,7 @@ using namespace std;
 
 #include "Memento.h"
 
-// Ô­ÉúÆ÷£ºCodeVersion
+// Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½CodeVersion
 class CodeVersion
 {
 public:
@@ -20,11 +20,15 @@ public:
 		date = iDate;
 		label = iLabel;
 	}
-	// ±£´æ´úÂë
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	Memento* save(){
 		return new Memento(this->version, this->date, this->label);
 	}
-	// »ØÍË°æ±¾
+	Memento *commit()
+	{
+		return new Memento(this->version, this->date, this->label);
+	}
+	// ï¿½ï¿½ï¿½Ë°æ±¾
 	void restore(Memento* memento){
 		setVersion(memento->getVersion());
 		setDate(memento->getDate());
@@ -49,11 +53,11 @@ public:
 		return date;
 	}
 private:
-	// ´úÂë°æ±¾
+	// ï¿½ï¿½ï¿½ï¿½æ±¾
 	int version;
-	// ´úÂëÌá½»ÈÕÆÚ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½
 	string date;
-	// ´úÂë±êÇ©
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Ç©
 	string label;
 };
 

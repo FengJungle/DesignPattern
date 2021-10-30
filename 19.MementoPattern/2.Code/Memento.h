@@ -1,6 +1,9 @@
 #ifndef __MEMENTO_H__
 #define __MEMENTO_H__
 
+#include <string>
+using namespace std;
+
 class Memento
 {
 public:

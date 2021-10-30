@@ -3,26 +3,38 @@
 
 #include "Memento.h"
 #include <vector>
+#include <string>
+#include <stdio.h>
 using namespace std;
 
-// ¹ÜÀíÕß
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 class CodeManager
 {
 public:
 	CodeManager(){}
+	~CodeManager(){
+		for(auto* memento: mementoList){
+			if(memento){
+				delete memento;
+				memento = nullptr;
+			}
+		}
+	}
+	CodeManager(const CodeManager&) = delete;
+	CodeManager& operator=(const CodeManager&) = delete;
 	void commit(Memento* m){
-		printf("Ìá½»£º°æ±¾-%d, ÈÕÆÚ-%s, ±êÇ©-%s\n", m->getVersion(), m->getDate().c_str(), m->getLabel().c_str());
+		printf("ï¿½á½»ï¿½ï¿½ï¿½æ±¾-%d, ï¿½ï¿½ï¿½ï¿½-%s, ï¿½ï¿½Ç©-%s\n", m->getVersion(), m->getDate().c_str(), m->getLabel().c_str());
 		mementoList.push_back(m);
 	}
-	// ÇÐ»»µ½Ö¸¶¨µÄ°æ±¾£¬¼´»ØÍËµ½Ö¸¶¨°æ±¾
+	// ï¿½Ð»ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä°æ±¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½Ö¸ï¿½ï¿½ï¿½æ±¾
 	Memento* switchToPointedVersion(int index){
 		mementoList.erase(mementoList.begin() + mementoList.size() - index, mementoList.end());
 		return mementoList[mementoList.size() - 1];
 	}
-	// ´òÓ¡ÀúÊ·°æ±¾
+	// ï¿½ï¿½Ó¡ï¿½ï¿½Ê·ï¿½æ±¾
 	void codeLog(){
 		for (int i = 0; i < mementoList.size(); i++){
-			printf("[%d]£º°æ±¾-%d, ÈÕÆÚ-%s, ±êÇ©-%s\n", i, mementoList[i]->getVersion(),
+			printf("[%d]ï¿½ï¿½ï¿½æ±¾-%d, ï¿½ï¿½ï¿½ï¿½-%s, ï¿½ï¿½Ç©-%s\n", i, mementoList[i]->getVersion(),
 				mementoList[i]->getDate().c_str(), mementoList[i]->getLabel().c_str());
 		}
 	}
