@@ -136,3 +136,8 @@ Jungle设计模式系列
 30.Qt中的设计模式
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/120936720  
+
+31.PImpl模式
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/123150564
+
