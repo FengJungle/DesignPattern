@@ -141,3 +141,8 @@ Jungle设计模式系列
 
 博客地址：https://blog.csdn.net/sinat_21107433/article/details/123150564
 
+32.啊，如何遵循“低耦合”设计原则？
+
+博客地址：https://blog.csdn.net/sinat_21107433/article/details/123160949
+
+
