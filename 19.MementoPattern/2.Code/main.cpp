@@ -43,6 +43,8 @@ int main()
 
 	delete Jungle;
 	delete codeVer;
+	Jungle = nullptr;
+	codeVer = nullptr;
 
 	return 0;
 }

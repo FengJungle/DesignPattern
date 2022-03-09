@@ -14,6 +14,7 @@ int main()
 	system("pause");
 
 	delete jungle;
+	jungle = nullptr;
 	
 	return 0;
 }

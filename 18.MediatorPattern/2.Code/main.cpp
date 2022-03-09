@@ -41,6 +41,12 @@ int main()
 	delete fangdong3;
 	delete jungle;
 	delete jianmengtu;
+	mediator   = nullptr;
+	fangdong1  = nullptr;
+	fangdong2  = nullptr;
+	fangdong3  = nullptr;
+	jungle     = nullptr;
+	jianmengtu = nullptr;
 
 	return 0;
 }

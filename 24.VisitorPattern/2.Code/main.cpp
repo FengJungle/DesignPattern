@@ -39,6 +39,13 @@ int main()
 	delete cashier;
 	delete jungle;
 	delete shoppingCart;
+	apple1 = nullptr;
+	apple2 = nullptr;
+	book1 = nullptr;
+	book2 = nullptr;
+	cashier = nullptr;
+	jungle = nullptr;
+	shoppingCart = nullptr;
 
 	return 0;
 }

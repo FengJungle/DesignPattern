@@ -34,6 +34,11 @@ int main()
 	delete Single;
 	delete Jianmengtu;
 	delete SillyDog;
+	controller = nullptr;
+	Jungle     = nullptr;
+	Single     = nullptr;
+	Jianmengtu = nullptr;
+	SillyDog   = nullptr;
 
 	return 0;
 }

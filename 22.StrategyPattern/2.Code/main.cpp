@@ -26,6 +26,7 @@ int main()
 	system("pause");
 
 	delete ctx;
+	ctx = nullptr;
 
 	return 0;
 }
