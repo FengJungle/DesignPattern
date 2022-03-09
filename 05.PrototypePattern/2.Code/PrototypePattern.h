@@ -27,7 +27,7 @@ private:
 	
 };
 
-// 抽象原型类PrototypeWork
+// 具体原型类PrototypeWork
 class ConcreteWork :public PrototypeWork
 {
 public:
