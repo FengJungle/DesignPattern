@@ -35,6 +35,11 @@ int main()
 	delete device2;
 	delete device3;
 	delete device4;
+	factory = nullptr;
+	device1 = nullptr;
+	device2 = nullptr;
+	device3 = nullptr;
+	device4 = nullptr;
 	
 	system("pause");
 	return 0;

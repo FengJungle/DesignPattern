@@ -56,5 +56,18 @@ int main()
 	delete office7;
 	delete office8;
 
+	head = nullptr;
+	sichuanBranch = nullptr;
+	cdBranch = nullptr;
+	myBranch = nullptr;
+	office1 = nullptr;
+	office2 = nullptr;
+	office3 = nullptr;
+	office4 = nullptr;
+	office5 = nullptr;
+	office6 = nullptr;
+	office7 = nullptr;
+	office8 = nullptr;
+
 	return 0;
 }

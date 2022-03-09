@@ -37,6 +37,14 @@ int main()
 	delete bill2;
 	delete bill3;
 	delete bill4;
+	zuzhang = nullptr;
+	bingge = nullptr;
+	chunzong = nullptr;
+	laoban = nullptr;
+	bill1 = nullptr;
+	bill2 = nullptr;
+	bill3 = nullptr;
+	bill4 = nullptr;
 
 	system("pause");
 	return 0;
