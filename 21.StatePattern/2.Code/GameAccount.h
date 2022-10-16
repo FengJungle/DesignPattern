@@ -13,12 +13,7 @@ public:
 	GameAccount(string iName);
 	GameAccount(const GameAccount&) = delete;
 	GameAccount& operator=(const GameAccount&) = delete;
-	~GameAccount(){
-		if(level){
-			delete level;
-			level = nullptr;
-		}
-	}
+	~GameAccount();
 	string getName();
 	void win();
 	void lose();

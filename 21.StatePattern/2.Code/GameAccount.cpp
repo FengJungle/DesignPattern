@@ -19,7 +19,12 @@ GameAccount::GameAccount(string iName){
 	name = iName;
 	setLevel(new Primary(this));
 }
-
+GameAccount::~GameAccount(){
+	if(level){
+		delete level;
+		level = nullptr;
+	}
+}
 void GameAccount::setLevel(Level* iLevel){
 	if(level != nullptr){
 		delete level;
@@ -47,6 +52,7 @@ void GameAccount::playCard(){
 
 	this->level->upgradeLevel();
 }
+
 
 void GameAccount::win(){
 	if (this->getScore() < 200){
