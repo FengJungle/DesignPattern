@@ -66,7 +66,6 @@ Secondary::Secondary(){
 
 Secondary::Secondary(Level* level){
 	this->setGameAccount(level->getGameAccount());
-	getGameAccount()->setLevel(level);
 }
 
 void Secondary::doubleScore(){
@@ -99,7 +98,6 @@ Professional::Professional(){
 
 Professional::Professional(Level* level){
 	this->setGameAccount(level->getGameAccount());
-	getGameAccount()->setLevel(level);
 }
 
 void Professional::doubleScore(){
@@ -132,7 +130,6 @@ Final::Final(){
 
 Final::Final(Level* level){
 	this->setGameAccount(level->getGameAccount());
-	getGameAccount()->setLevel(level);
 }
 
 void Final::doubleScore(){
