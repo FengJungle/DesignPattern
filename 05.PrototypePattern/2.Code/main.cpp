@@ -50,7 +50,6 @@ int main()
 	system("pause");
 
 	delete singleWork;
-	delete jungleModel;
 	delete jungleWork;
 	return 0;
 }
