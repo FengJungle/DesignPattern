@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
 project(SimpleFactory)
 set(SRC_LIST main.cpp)
-add_executable(app ${SRC_LIST})
+add_executable(app1 ${SRC_LIST})
+set(EXECUTABLE_OUTPUT_PATH ${OUTPUT_PATH}/bin/)
