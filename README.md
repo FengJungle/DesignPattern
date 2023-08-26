@@ -1,6 +1,15 @@
 # DesignPattern
 Jungle设计模式系列
 
+## How to compile
+### Windows
+```{.line-numbers}
+mkdir build
+cd build
+cmake -G "MinGW Makefiles" ../
+make
+```
+
 ## 感谢
 感谢@ichdream, @sterben-01对本项目的贡献，也欢迎和支持更多coder提出修改和指正
 
