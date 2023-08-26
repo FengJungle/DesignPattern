@@ -9,6 +9,13 @@ cd build
 cmake -G "MinGW Makefiles" ../
 make
 ```
+### Linux
+```{.line-numbers}
+mkdir build
+cd build
+cmake ../
+make
+```
 
 ## 感谢
 感谢@ichdream, @sterben-01对本项目的贡献，也欢迎和支持更多coder提出修改和指正

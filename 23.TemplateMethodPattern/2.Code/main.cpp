@@ -1,5 +1,4 @@
 #include "FingerprintModule.h"
-#include <Windows.h>
 
 int main()
 {
@@ -19,7 +18,6 @@ int main()
 	fp = nullptr;
 
 	printf("\n\n");
-	system("pause");
 
 	return 0;
 }
