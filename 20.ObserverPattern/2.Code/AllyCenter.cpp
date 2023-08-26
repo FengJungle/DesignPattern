@@ -35,14 +35,14 @@ AllyCenterController::AllyCenterController(){
 void AllyCenterController::notify(INFO_TYPE infoType, std::string name){
 	switch (infoType){
 	case RESOURCE:
-		for each (Observer* obs in playerList){
+		for (Observer* obs : playerList){
 			if (obs->getName() != name){
 				((Player*)obs)->come();
 			}
 		}
 		break;
 	case HELP:
-		for each (Observer* obs in playerList){
+		for (Observer* obs : playerList){
 			if (obs->getName() != name){
 				((Player*)obs)->help();
 			}

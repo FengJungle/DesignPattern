@@ -3,6 +3,7 @@
 
 #include "common.h"
 #include <vector>
+#include <string>
 
 // 前向声明
 class Observer;

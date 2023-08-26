@@ -2,6 +2,7 @@
 #define __COLLEAGUE_H__
 
 #include "common.h"
+#include <string>
 using namespace std;
 
 // 前向声明

@@ -1,7 +1,7 @@
 #include "Element.h"
 #include "Visitor.h"
 #include "ShoppingCart.h"
-#include <Windows.h>
+// #include <Windows.h>
 
 int main()
 {

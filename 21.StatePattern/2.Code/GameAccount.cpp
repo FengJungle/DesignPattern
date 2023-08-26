@@ -1,6 +1,6 @@
 #include "GameAccount.h"
 #include "Level.h"
-#include <Windows.h>
+// #include <Windows.h>
 #include <time.h>
 #define  random(x) (rand()%x)
 
@@ -40,7 +40,7 @@ string GameAccount::getName(){
 void GameAccount::playCard(){
 	this->level->playCard();
 
-	Sleep(100);
+	// Sleep(100);
 	srand((int)time(0));
 	int res = random(2);
 	if (res % 2 == 0){
