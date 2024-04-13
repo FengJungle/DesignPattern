@@ -138,7 +138,7 @@ int main()
 ![avatar](https://github.com/FengJungle/DesignPattern/blob/master/11.FacadePattern/1.Picture/%E8%BF%90%E8%A1%8C%E5%9B%BE1.png)
 
 ## 4.总结
-= 优点：
+- 优点：
     - 外观模式使得客户端不必关心子系统组件，减少了与客户端交互的对象的数量，简化了客户端的编程；
     - 外观模式可以大大降低系统的耦合度；
     - 子系统的变化并不需要修改客户端，只需要适当修改外观类即可；
