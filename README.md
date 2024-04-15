@@ -88,11 +88,11 @@ make
 
 27.设计模式那么多！面试官会怎么问？  
 
-博客地址：[https://blog.csdn.net/sinat_21107433/article/details/120557373](https://zhuanlan.zhihu.com/p/415609134)
+博客地址：https://zhuanlan.zhihu.com/p/415609134
 
 28.划重点：面试中单例模式的考点！（C++版本）
 
-博客地址：https://blog.csdn.net/sinat_21107433/article/details/120591638
+博客地址：https://zhuanlan.zhihu.com/p/692662459
 
 29.new也可以创建对象，为什么需要工厂模式？
 
@@ -104,7 +104,7 @@ make
 
 31.PImpl模式
 
-博客地址：https://blog.csdn.net/sinat_21107433/article/details/123150564
+博客地址：https://zhuanlan.zhihu.com/p/692661653
 
 32.啊，如何遵循“低耦合”设计原则？
 
