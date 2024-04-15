@@ -88,7 +88,7 @@ make
 
 27.设计模式那么多！面试官会怎么问？  
 
-博客地址：https://blog.csdn.net/sinat_21107433/article/details/120557373
+博客地址：[https://blog.csdn.net/sinat_21107433/article/details/120557373](https://zhuanlan.zhihu.com/p/415609134)
 
 28.划重点：面试中单例模式的考点！（C++版本）
 
