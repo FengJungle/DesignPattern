@@ -96,7 +96,7 @@ make
 
 29.new也可以创建对象，为什么需要工厂模式？
 
-博客地址：https://blog.csdn.net/sinat_21107433/article/details/120754301
+博客地址：https://zhuanlan.zhihu.com/p/611234726
 
 30.Qt中的设计模式
 
@@ -108,6 +108,6 @@ make
 
 32.啊，如何遵循“低耦合”设计原则？
 
-博客地址：https://blog.csdn.net/sinat_21107433/article/details/123160949
+博客地址：https://zhuanlan.zhihu.com/p/473171832
 
 
